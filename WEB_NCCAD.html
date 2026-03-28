@@ -1,0 +1,887 @@
+<html lang="en" class="scroll-smooth"><head>
+<script>
+try{if(window.parent&&window.parent!==window){window.parent.promotekit_referral="1fd2949a-d22c-431b-92bf-02d4ad04ee24";window.parent.document.cookie="promotekit_referral=1fd2949a-d22c-431b-92bf-02d4ad04ee24;path=/;domain=.aura.build;max-age=31536000"}}catch(e){}
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Artur Nogué Cruells - CAD Designer</title>
+<script>
+(() => {
+const storedTheme = localStorage.getItem('siteTheme');
+const initialTheme = storedTheme || 'dark';
+document.documentElement.dataset.theme = initialTheme;
+})();
+</script>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Jura:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* Custom scrollbar for a cleaner look */
+::-webkit-scrollbar {
+width: 8px;
+}
+::-webkit-scrollbar-track {
+background: #050505;
+}
+::-webkit-scrollbar-thumb {
+background: #292929;
+border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+background: #404040;
+}
+/* Utility for hiding input autofill background */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active{
+-webkit-box-shadow: 0 0 0 30px #050505 inset !important;
+-webkit-text-fill-color: #f4f4f5 !important;
+transition: background-color 5000s ease-in-out 0s;
+}
+html {
+color-scheme: dark;
+}
+html[data-theme="light"] {
+color-scheme: light;
+}
+body {
+position: relative;
+transition: background-color 350ms ease, color 350ms ease;
+}
+#nav-logo {
+transform: scale(1);
+transform-origin: left center;
+filter: brightness(0) invert(1);
+}
+html[data-theme="light"] #nav-logo {
+filter: none;
+}
+.lang-option {
+position: relative;
+z-index: 1;
+overflow: hidden;
+border-radius: 9999px;
+padding: 0.375rem 0.8rem;
+font-size: 10px;
+font-weight: 500;
+letter-spacing: 0.28em;
+text-transform: uppercase;
+color: rgba(244,244,245,0.5);
+transition: color 300ms ease, opacity 300ms ease, background-color 300ms ease, box-shadow 300ms ease;
+}
+.lang-option[aria-pressed="true"] {
+color: #fafafa;
+box-shadow: inset 0 0 0 1px rgba(255,255,255,0.06);
+}
+.lang-option::before {
+content: "";
+position: absolute;
+inset: 0;
+opacity: 0;
+transition: opacity 300ms ease;
+pointer-events: none;
+}
+.lang-option::after {
+content: "";
+position: absolute;
+inset: 0;
+background: rgba(0,0,0,0.22);
+opacity: 0;
+transition: opacity 300ms ease;
+pointer-events: none;
+}
+.lang-option[data-lang="en"]::before {
+background:
+linear-gradient(90deg, #3c3b6e 0 36%, transparent 36% 100%),
+linear-gradient(180deg, #b22234 0 14.28%, #f8f8f8 14.28% 28.56%, #b22234 28.56% 42.84%, #f8f8f8 42.84% 57.12%, #b22234 57.12% 71.4%, #f8f8f8 71.4% 85.68%, #b22234 85.68% 100%);
+background-size: 100% 57%, 100% 100%;
+background-position: top left, center;
+background-repeat: no-repeat;
+}
+.lang-option[data-lang="es"]::before {
+background: linear-gradient(180deg, #aa151b 0 25%, #f1bf00 25% 75%, #aa151b 75% 100%);
+}
+.lang-option[aria-pressed="true"]::before,
+.lang-option[aria-pressed="true"]::after {
+opacity: 0.88;
+}
+.lang-option > span {
+position: relative;
+z-index: 1;
+}
+.lang-option[aria-pressed="false"]:hover {
+color: rgba(244,244,245,0.78);
+}
+.control-stack {
+display: flex;
+flex-direction: column;
+align-items: flex-end;
+gap: 0.6rem;
+}
+.theme-switch {
+display: flex;
+align-items: center;
+gap: 0.35rem;
+}
+.theme-option {
+display: inline-flex;
+align-items: center;
+justify-content: center;
+width: 2rem;
+height: 2rem;
+border-radius: 9999px;
+color: rgba(244,244,245,0.5);
+transition: color 300ms ease, background-color 300ms ease, box-shadow 300ms ease, border-color 300ms ease;
+box-shadow: inset 0 0 0 1px rgba(255,255,255,0.06);
+background: rgba(255,255,255,0.02);
+backdrop-filter: blur(10px);
+}
+.theme-option[aria-pressed="true"] {
+color: #fafafa;
+background: rgba(255,255,255,0.08);
+box-shadow: inset 0 0 0 1px rgba(255,255,255,0.12);
+}
+.theme-option[aria-pressed="false"]:hover {
+color: rgba(244,244,245,0.8);
+}
+.theme-option iconify-icon {
+font-size: 0.95rem;
+}
+html[data-theme="light"] body {
+background: #c1beb7 !important;
+color: #3f3b35 !important;
+}
+html[data-theme="light"] ::-webkit-scrollbar-track {
+background: #b8b4ac;
+}
+html[data-theme="light"] ::-webkit-scrollbar-thumb {
+background: #8f897f;
+}
+html[data-theme="light"] ::-webkit-scrollbar-thumb:hover {
+background: #756e65;
+}
+html[data-theme="light"] input:-webkit-autofill,
+html[data-theme="light"] input:-webkit-autofill:hover,
+html[data-theme="light"] input:-webkit-autofill:focus,
+html[data-theme="light"] input:-webkit-autofill:active{
+-webkit-box-shadow: 0 0 0 30px #c9c5be inset !important;
+-webkit-text-fill-color: #1c1917 !important;
+}
+html[data-theme="light"] body::before {
+content: "";
+position: fixed;
+inset: 0;
+background:
+radial-gradient(circle at top left, rgba(255,255,255,0.22), transparent 26%),
+linear-gradient(180deg, rgba(255,255,255,0.08), transparent 22%);
+pointer-events: none;
+z-index: -1;
+}
+html[data-theme="light"] .lang-option,
+html[data-theme="light"] .theme-option {
+color: rgba(60,52,43,0.58);
+box-shadow: inset 0 0 0 1px rgba(76,67,57,0.12);
+background: rgba(255,255,255,0.2);
+}
+html[data-theme="light"] nav {
+mix-blend-mode: normal !important;
+color: #3e382f;
+}
+html[data-theme="light"] nav a:hover {
+color: #171412 !important;
+}
+html[data-theme="light"] .lang-option[aria-pressed="true"],
+html[data-theme="light"] .theme-option[aria-pressed="true"] {
+color: #1c1917;
+box-shadow: inset 0 0 0 1px rgba(28,25,23,0.12);
+}
+html[data-theme="light"] [class*="text-zinc-100"] {
+color: #171412 !important;
+}
+html[data-theme="light"] [class*="text-zinc-300"] {
+color: #4f483f !important;
+}
+html[data-theme="light"] [class*="text-zinc-400"] {
+color: #6d655c !important;
+}
+html[data-theme="light"] [class*="text-zinc-500"] {
+color: #847b70 !important;
+}
+html[data-theme="light"] [class*="text-zinc-600"] {
+color: #978c80 !important;
+}
+html[data-theme="light"] [class*="border-zinc-900"],
+html[data-theme="light"] [class*="border-zinc-800"] {
+border-color: rgba(88,79,68,0.18) !important;
+}
+html[data-theme="light"] [class*="bg-zinc-950"] {
+background-color: rgba(255,255,255,0.2) !important;
+}
+html[data-theme="light"] [class*="bg-zinc-900/20"],
+html[data-theme="light"] [class*="hover:bg-zinc-900/20"]:hover,
+html[data-theme="light"] [class*="hover:bg-zinc-900/20"]:focus {
+background-color: rgba(44,38,32,0.04) !important;
+}
+html[data-theme="light"] .group:hover [class*="group-hover:text-white"] {
+color: #171412 !important;
+}
+html[data-theme="light"] .text-blue-500 {
+color: #315dd7 !important;
+}
+html[data-theme="light"] .hover\:text-blue-400:hover {
+color: #2149b6 !important;
+}
+html[data-theme="light"] input,
+html[data-theme="light"] textarea {
+color: #171412 !important;
+border-color: rgba(88,79,68,0.22) !important;
+}
+html[data-theme="light"] input::placeholder,
+html[data-theme="light"] textarea::placeholder {
+color: #978c80 !important;
+}
+html[data-theme="light"] input:focus,
+html[data-theme="light"] textarea:focus {
+border-color: rgba(36,31,27,0.45) !important;
+}
+html[data-theme="light"] #form-submit {
+background: #171412 !important;
+color: #ece8e1 !important;
+}
+html[data-theme="light"] #form-submit:hover {
+background: #2b2622 !important;
+}
+html[data-theme="light"] #hero-mark,
+html[data-theme="light"] #footer-logo {
+filter: invert(1) brightness(0.1);
+}
+html[data-theme="light"] #hero-image {
+opacity: 1 !important;
+filter: none;
+}
+html[data-theme="light"] ::selection {
+background: rgba(28,25,23,0.14);
+color: #171412;
+}
+</style><!-- aura-ga4-start -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-2M6V79H761"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-2M6V79H761');
+</script>
+<!-- aura-ga4-end -->
+</head>
+<body class="bg-[#050505] text-zinc-300 font-['Jura',sans-serif] antialiased selection:bg-zinc-800 selection:text-zinc-100">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full top-0 z-50 mix-blend-difference text-zinc-300 px-6 py-6 md:px-12 flex justify-between items-center text-xs">
+        <a href="#" class="h-16 w-[10.5rem] flex items-center">
+            <img id="nav-logo" src="Logos/Logo_SenseFons.png" alt="NC CAD Services" class="h-full w-full object-contain object-left">
+        </a>
+        
+        <div class="hidden md:flex items-center space-x-12">
+            <a id="nav-about" href="#about" class="hover:text-zinc-100 transition-colors">About</a>
+            <a id="nav-work" href="#work" class="hover:text-zinc-100 transition-colors">Work</a>
+            <a id="nav-pricing" href="#pricing" class="hover:text-zinc-100 transition-colors">Pricing</a>
+            <a id="nav-contact" href="#contact" class="hover:text-zinc-100 transition-colors">Contact</a>
+        </div>
+
+        <div class="w-[6.25rem] md:w-[6.25rem]" aria-hidden="true"></div>
+    </nav>
+
+    <div class="fixed top-6 right-6 md:right-12 z-[60]">
+        <div class="control-stack">
+            <div class="flex items-center gap-1.5" role="group" aria-label="Select language">
+                <button type="button" class="lang-option outline-none focus-visible:ring-1 focus-visible:ring-zinc-200/70" data-lang="en" aria-pressed="true">
+                    <span>EN</span>
+                </button>
+                <button type="button" class="lang-option outline-none focus-visible:ring-1 focus-visible:ring-zinc-200/70" data-lang="es" aria-pressed="false">
+                    <span>ES</span>
+                </button>
+            </div>
+            <div class="theme-switch" role="group" aria-label="Select theme">
+                <button type="button" class="theme-option outline-none focus-visible:ring-1 focus-visible:ring-zinc-200/70" data-theme-option="light" aria-pressed="false" aria-label="Light mode">
+                    <iconify-icon icon="solar:sun-2-linear"></iconify-icon>
+                </button>
+                <button type="button" class="theme-option outline-none focus-visible:ring-1 focus-visible:ring-zinc-200/70" data-theme-option="dark" aria-pressed="true" aria-label="Dark mode">
+                    <iconify-icon icon="solar:moon-linear"></iconify-icon>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <header class="relative w-full pt-40 pb-20 flex flex-col items-center">
+        <div class="w-full max-w-[100rem] mx-auto px-6 md:px-12 flex flex-col items-center justify-center mb-12 gap-8">
+            <!-- Two column layout with logo and text -->
+            <div class="flex items-center justify-center gap-8 md:gap-20">
+                <img id="hero-mark" src="Logos/NC_Blanc.png" alt="NC" class="h-32 md:h-40 w-auto flex-shrink-0">
+                <h1 class="text-9xl md:text-10xl font-extralight tracking-widest text-zinc-100 leading-none">CAD SERVICES</h1>
+            </div>
+        </div>
+        
+        <div class="relative w-full max-w-[100rem] mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between items-start md:items-end text-xs uppercase tracking-widest text-zinc-500 mb-12 gap-4">
+            <div>
+                <p class="text-zinc-300 mb-1">Artur Nogué Cruells</p>
+                <p id="hero-role">CAD Designer</p>
+            </div>
+            <div class="hidden md:block md:absolute md:left-1/2 md:-translate-x-1/2 text-center">
+                <p class="text-zinc-300 mb-1" id="hero-born">Born &amp; Raised</p>
+                <p id="hero-location">Barcelona, ES</p>
+            </div>
+            <div class="text-right">
+                <p id="hero-copy">©2026</p>
+            </div>
+        </div>
+
+        <img id="hero-image" src="Logos/Barco.png" alt="PDF to CAD workflow" class="block w-full max-w-none h-auto object-contain object-center opacity-100">
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 px-6 md:px-12 max-w-[100rem] mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24">
+            <div class="lg:col-span-2 flex lg:justify-end">
+                <span class="text-xs text-zinc-500">(1)</span>
+            </div>
+            <div class="lg:col-span-10">
+                <h2 id="about-description" class="text-4xl md:text-6xl font-extralight tracking-tight text-zinc-100 leading-tight mb-32 max-w-5xl">
+                    Based in Barcelona, NC CAD Services offers precise and functional technical design for naval and industrial projects.
+                    Development of drawings, modeling and documentation ready for manufacturing, with a practical focus and attention to detail.
+                </h2>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                    <div class="lg:col-span-2">
+                        <span id="skills-label" class="text-xs text-zinc-500">(Skills)</span>
+                    </div>
+                    <div class="lg:col-span-10 flex flex-col">
+                        <!-- Skill Item -->
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 py-8 border-t border-zinc-900">
+                            <h3 id="skill-strategy-title" class="text-xl tracking-tight text-zinc-100 font-light">Strategy</h3>
+                            <p id="skill-strategy-desc" class="md:col-span-2 text-sm text-zinc-400 font-light leading-relaxed">Developing comprehensive brand strategies that form the core identity for her clients. Her work involves deep market research and consumer psychology to define a brand's unique vision.</p>
+                        </div>
+                        <!-- Skill Item -->
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 py-8 border-t border-zinc-900">
+                            <h3 id="skill-webdesign-title" class="text-xl tracking-tight text-zinc-100 font-light">Web Design</h3>
+                            <p id="skill-webdesign-desc" class="md:col-span-2 text-sm text-zinc-400 font-light leading-relaxed">Creates visually engaging and intuitive websites that combine aesthetic appeal with flawless user experience. She is proficient in crafting layouts, selecting typography, and managing visual assets to ensure perfection.</p>
+                        </div>
+                        <!-- Skill Item -->
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 py-8 border-t border-zinc-900 border-b">
+                            <h3 id="skill-branding-title" class="text-xl tracking-tight text-zinc-100 font-light">Branding</h3>
+                            <p id="skill-branding-desc" class="md:col-span-2 text-sm text-zinc-400 font-light leading-relaxed">Specializes in the visual representation of a brand, developing cohesive and memorable design systems. Her brand design work, which includes logos, color palettes, and typographic systems.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Full Width Image -->
+    <div class="w-full px-4 md:px-8 py-12">
+        <div class="w-full aspect-[4/5] md:aspect-[2/1] rounded-2xl overflow-hidden relative">
+            <img src="Work/BARCO CI.png" alt="BARCO CI" class="w-full h-full object-cover opacity-60">
+        </div>
+    </div>
+
+    <!-- Work Section -->
+    <section id="work" class="py-24 px-6 md:px-12 max-w-[100rem] mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 mb-16">
+            <div class="lg:col-span-2 flex lg:justify-end">
+                <span class="text-xs text-zinc-500">(3)</span>
+            </div>
+            <div class="lg:col-span-10">
+                <h2 id="section-work" class="text-6xl md:text-8xl font-extralight tracking-tighter text-zinc-100">Work</h2>
+            </div>
+        </div>
+
+        <div class="flex flex-col border-t border-zinc-900">
+            <!-- Project Item -->
+            <a href="#" class="group relative flex flex-col md:flex-row items-start md:items-center justify-between py-12 border-b border-zinc-900 hover:bg-zinc-900/20 transition-colors px-4 -mx-4">
+                <div class="flex flex-col md:flex-row md:items-center gap-4 md:gap-12 z-10">
+                    <h3 class="text-4xl md:text-5xl font-extralight tracking-tighter text-zinc-100 group-hover:text-white transition-colors">PDF to CAD</h3>
+                </div>
+                <div class="flex flex-col md:flex-row md:items-center gap-4 md:gap-12 mt-4 md:mt-0 z-10">
+                    <span class="text-xs text-zinc-500">2026</span>
+                </div>
+                <!-- Hover Image Reveal (Desktop only for neatness) -->
+                <div class="absolute left-[58%] top-1/2 -translate-x-1/2 -translate-y-1/2 w-[860px] rounded-lg overflow-hidden opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 transition-all duration-500 pointer-events-none z-0 hidden lg:block shadow-2xl">
+                    <div class="grid grid-cols-2 gap-3 bg-[#050505]/90 p-3">
+                        <div class="h-[320px] flex items-center justify-center rounded-lg overflow-hidden">
+                            <img src="Work/PDFtoCAD_A4.png" alt="PDF to CAD Project" class="max-w-full max-h-full object-contain rounded-lg">
+                        </div>
+                        <div class="h-[320px] flex items-center justify-center rounded-lg overflow-hidden">
+                            <img src="Work/PDF.png" alt="PDF reference Project" class="max-w-full max-h-full object-contain rounded-lg">
+                        </div>
+                    </div>
+                </div>
+            </a>
+            
+            <!-- Project Item -->
+            <a href="#" class="group relative flex flex-col md:flex-row items-start md:items-center justify-between py-12 border-b border-zinc-900 hover:bg-zinc-900/20 transition-colors px-4 -mx-4">
+                <div class="flex flex-col md:flex-row md:items-center gap-4 md:gap-12 z-10">
+                    <h3 class="text-4xl md:text-5xl font-extralight tracking-tighter text-zinc-100 group-hover:text-white transition-colors">Technical drawing</h3>
+                </div>
+                <div class="flex flex-col md:flex-row md:items-center gap-4 md:gap-12 mt-4 md:mt-0 z-10">
+                    <span class="text-xs text-zinc-500">2025</span>
+                </div>
+                <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[420px] rounded-lg overflow-hidden opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 transition-all duration-500 pointer-events-none z-0 hidden lg:block shadow-2xl">
+                    <img src="Work/TechnicalDrawing.png" alt="Technical drawing Project" class="w-full h-auto object-contain">
+                </div>
+            </a>
+
+            <!-- Project Item -->
+            <a href="#" class="group relative flex flex-col md:flex-row items-start md:items-center justify-between py-12 border-b border-zinc-900 hover:bg-zinc-900/20 transition-colors px-4 -mx-4">
+                <div class="flex flex-col md:flex-row md:items-center gap-4 md:gap-12 z-10">
+                    <h3 class="text-4xl md:text-5xl font-extralight tracking-tighter text-zinc-100 group-hover:text-white transition-colors">Sketch to CAD</h3>
+                </div>
+                <div class="flex flex-col md:flex-row md:items-center gap-4 md:gap-12 mt-4 md:mt-0 z-10">
+                    <span class="text-xs text-zinc-500">2026</span>
+                </div>
+                <div class="absolute left-[58%] top-1/2 -translate-x-1/2 -translate-y-1/2 w-[860px] rounded-lg overflow-hidden opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 transition-all duration-500 pointer-events-none z-0 hidden lg:block shadow-2xl">
+                    <div class="grid grid-cols-2 gap-3 bg-[#050505]/90 p-3">
+                        <div class="h-[320px] flex items-center justify-center rounded-lg overflow-hidden">
+                            <img src="Work/SKETCHtoCAD.png" alt="Sketch to CAD Project" class="max-w-full max-h-full object-contain rounded-lg">
+                        </div>
+                        <div class="h-[320px] flex items-center justify-center rounded-lg overflow-hidden">
+                            <img src="Work/Sketch.png" alt="Sketch reference Project" class="max-w-full max-h-full object-contain rounded-lg">
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Project Item -->
+            <a href="#" class="group relative flex flex-col md:flex-row items-start md:items-center justify-between py-12 border-b border-zinc-900 hover:bg-zinc-900/20 transition-colors px-4 -mx-4">
+                <div class="flex flex-col md:flex-row md:items-center gap-4 md:gap-12 z-10">
+                    <h3 class="text-4xl md:text-5xl font-extralight tracking-tighter text-zinc-100 group-hover:text-white transition-colors">Welded Assembly</h3>
+                </div>
+                <div class="flex flex-col md:flex-row md:items-center gap-4 md:gap-12 mt-4 md:mt-0 z-10">
+                    <span class="text-xs text-zinc-500">2024</span>
+                </div>
+                <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[420px] rounded-lg overflow-hidden opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 transition-all duration-500 pointer-events-none z-0 hidden lg:block shadow-2xl">
+                    <img src="Work/Welded piece.png" alt="Welded Assembly Project" class="w-full h-auto object-contain">
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-24 px-6 md:px-12 max-w-[100rem] mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 mb-16">
+            <div class="lg:col-span-2 flex lg:justify-end">
+                <span class="text-xs text-zinc-500">(5)</span>
+            </div>
+            <div class="lg:col-span-10">
+                <h2 id="section-pricing" class="text-6xl md:text-8xl font-extralight tracking-tighter text-zinc-100">Pricing</h2>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Pricing Box 1 -->
+            <div class="h-full border border-zinc-800 rounded-lg p-8 hover:border-zinc-600 transition-colors hover:bg-zinc-900/20 grid grid-rows-[auto_1fr_auto] gap-5">
+                <div>
+                    <p id="pricing-pdf-title" class="text-2xl text-zinc-100 font-light tracking-tight">PDF to CAD</p>
+                    <p id="pricing-pdf-price" class="mt-2 text-4xl text-zinc-100 font-extralight">From $80</p>
+                </div>
+                <ul class="flex flex-col gap-3 text-sm text-zinc-400 font-light leading-relaxed">
+                    <li id="pricing-pdf-line1">Convert PDF drawings into clean, professional CAD files</li>
+                    <li id="pricing-pdf-line2">Accurate scaling and well-organized layers</li>
+                    <li id="pricing-pdf-line3">Ready for use, printing or manufacturing</li>
+                </ul>
+                <p id="pricing-pdf-note" class="text-xs text-zinc-500 font-light leading-relaxed">Final price depends on project complexity. Most projects range between $80 and $200.</p>
+            </div>
+            <!-- Pricing Box 2 -->
+            <div class="h-full border border-zinc-800 rounded-lg p-8 hover:border-zinc-600 transition-colors hover:bg-zinc-900/20 grid grid-rows-[auto_1fr_auto] gap-5">
+                <div>
+                    <p id="pricing-edit-title" class="text-2xl text-zinc-100 font-light tracking-tight">CAD Editing &amp; Redrawing</p>
+                    <p id="pricing-edit-price" class="mt-2 text-4xl text-zinc-100 font-extralight">From $110</p>
+                </div>
+                <ul class="flex flex-col gap-3 text-sm text-zinc-400 font-light leading-relaxed">
+                    <li id="pricing-edit-line1">Modify, improve or rebuild existing CAD drawings</li>
+                    <li id="pricing-edit-line2">Fix errors and optimize file structure</li>
+                    <li id="pricing-edit-line3">Clean, structured and ready-to-use results</li>
+                </ul>
+                <p id="pricing-edit-note" class="text-xs text-zinc-500 font-light leading-relaxed">Final price depends on project complexity. Most projects range between $110 and $250.</p>
+            </div>
+            <!-- Pricing Box 3 -->
+            <div class="h-full border border-zinc-800 rounded-lg p-8 hover:border-zinc-600 transition-colors hover:bg-zinc-900/20 grid grid-rows-[auto_1fr_auto] gap-5">
+                <div>
+                    <p id="pricing-sketch-title" class="text-2xl text-zinc-100 font-light tracking-tight">Sketch to CAD</p>
+                    <p id="pricing-sketch-price" class="mt-2 text-4xl text-zinc-100 font-extralight">From $140</p>
+                </div>
+                <ul class="flex flex-col gap-3 text-sm text-zinc-400 font-light leading-relaxed">
+                    <li id="pricing-sketch-line1">Convert hand sketches or images into technical drawings</li>
+                    <li id="pricing-sketch-line2">Precise interpretation and structured output</li>
+                    <li id="pricing-sketch-line3">Ideal for concepts, ideas or early-stage designs</li>
+                </ul>
+                <p id="pricing-sketch-note" class="text-xs text-zinc-500 font-light leading-relaxed">Final price depends on project complexity. Most projects range between $140 and $300.</p>
+            </div>
+        </div>
+
+        <div class="mt-8 border border-zinc-800 rounded-lg p-8 hover:border-zinc-600 transition-colors hover:bg-zinc-900/20">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+                <div class="lg:col-span-3">
+                    <p id="pricing-delivery-title" class="text-2xl text-zinc-100 font-light tracking-tight">Delivery</p>
+                </div>
+                <div class="lg:col-span-9 space-y-3">
+                    <p id="pricing-delivery-line1" class="text-sm text-zinc-300 font-light leading-relaxed">Delivery time: 48-72 hours</p>
+                    <p id="pricing-delivery-line2" class="text-sm text-zinc-400 font-light leading-relaxed">Need it faster? Express delivery (under 24 hours) is available for an additional fee.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 px-6 md:px-12 max-w-[100rem] mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 mb-16">
+            <div class="lg:col-span-2 flex lg:justify-end">
+                <span class="text-xs text-zinc-500">(6)</span>
+            </div>
+            <div class="lg:col-span-10">
+                <h2 id="section-contact" class="text-6xl md:text-8xl font-extralight tracking-tighter text-zinc-100">Contact</h2>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+            <div class="lg:col-span-2"></div>
+            <div class="lg:col-span-10 flex flex-col md:flex-row gap-16">
+                
+                <!-- Contact Info -->
+                <div class="w-full md:w-1/3 flex flex-col">
+                    <div class="py-6 border-t border-zinc-900 flex justify-between items-start">
+                        <h3 id="contact-address-label" class="text-sm tracking-tight text-zinc-100 font-light">Address</h3>
+                        <div class="text-sm text-zinc-400 font-light text-right">
+                            <p id="contact-address-line1">MY OFFICE,</p>
+                            <p id="contact-address-line2">BARCELONA,</p>
+                            <p id="contact-address-line3">CATALUNYA, SPAIN</p>
+                        </div>
+                    </div>
+                    <div class="py-6 border-t border-zinc-900 flex justify-between items-start">
+                        <h3 id="contact-phone-label" class="text-sm tracking-tight text-zinc-100 font-light">Phone</h3>
+                        <a href="tel:+34654365930" class="text-sm text-blue-500 hover:text-blue-400 transition-colors font-light text-right">+34 654 36 59 30</a>
+                    </div>
+                    <div class="py-6 border-t border-zinc-900 border-b flex justify-between items-start">
+                        <h3 id="contact-email-label" class="text-sm tracking-tight text-zinc-100 font-light">Email</h3>
+                        <div class="flex flex-col items-end text-right">
+                            <a id="contact-email-value" href="mailto:info@nccadservices.com" class="text-sm text-blue-500 hover:text-blue-400 transition-colors font-light">info@nccadservices.com</a>
+                            <a id="contact-email-secondary" href="mailto:contact@nccadservices.com" class="text-sm text-blue-500 hover:text-blue-400 transition-colors font-light">contact@nccadservices.com</a>
+                        </div>
+                    </div>
+                    <div class="py-6 border-b border-zinc-900 flex justify-between items-start">
+                        <h3 id="contact-linkedin-label" class="text-sm tracking-tight text-zinc-100 font-light">LinkedIn</h3>
+                        <a id="contact-linkedin-value" href="https://www.linkedin.com/in/artur-nogue" class="text-sm text-blue-500 hover:text-blue-400 transition-colors font-light text-right">Artur Nogué Cruells</a>
+                    </div>
+                </div>
+
+                <!-- Form -->
+                <form class="w-full md:w-2/3 flex flex-col gap-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <input id="form-first-name" type="text" placeholder="First Name" required="" class="w-full bg-transparent border-b border-zinc-800 py-4 text-zinc-100 focus:border-zinc-400 focus:outline-none transition-colors rounded-none placeholder-zinc-600 text-sm font-light">
+                        <input id="form-last-name" type="text" placeholder="Last Name" required="" class="w-full bg-transparent border-b border-zinc-800 py-4 text-zinc-100 focus:border-zinc-400 focus:outline-none transition-colors rounded-none placeholder-zinc-600 text-sm font-light">
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <input id="form-email" type="email" placeholder="Email" required="" class="w-full bg-transparent border-b border-zinc-800 py-4 text-zinc-100 focus:border-zinc-400 focus:outline-none transition-colors rounded-none placeholder-zinc-600 text-sm font-light">
+                        <input id="form-phone" type="tel" placeholder="Phone Number" class="w-full bg-transparent border-b border-zinc-800 py-4 text-zinc-100 focus:border-zinc-400 focus:outline-none transition-colors rounded-none placeholder-zinc-600 text-sm font-light">
+                    </div>
+                    <textarea id="form-message" placeholder="Message" required="" rows="4" class="w-full bg-transparent border-b border-zinc-800 py-4 text-zinc-100 focus:border-zinc-400 focus:outline-none transition-colors rounded-none placeholder-zinc-600 text-sm font-light resize-none"></textarea>
+                    
+                    <button id="form-submit" type="submit" class="mt-4 bg-zinc-100 text-zinc-950 hover:bg-zinc-300 transition-colors py-4 px-8 rounded-sm text-sm font-medium w-full sm:w-auto self-start">
+                        Submit
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="pt-32 pb-8 px-6 md:px-12 w-full flex flex-col items-center overflow-hidden">
+        <div class="flex justify-center w-full mb-24">
+            <img id="footer-logo" src="Logos/Logo_CAD_SERVICES.png" alt="NC CAD Services" class="h-64 w-auto">
+        </div>
+
+        <div class="relative w-full flex flex-col sm:flex-row justify-between items-start sm:items-end text-xs uppercase tracking-widest text-zinc-500 mb-20 gap-8 max-w-[100rem] mx-auto">
+            <div>
+                <p class="text-zinc-300 mb-1">Artur Nogué Cruells</p>
+                <p id="footer-role">CAD Designer</p>
+            </div>
+            <div class="text-left sm:text-center sm:absolute sm:left-1/2 sm:-translate-x-1/2">
+                <p class="text-zinc-300 mb-1" id="footer-born">Born &amp; Raised</p>
+                <p id="footer-location">Barcelona, ES</p>
+            </div>
+            <div class="text-left sm:text-right">
+                <p id="footer-rights">All Rights Reserved</p>
+            </div>
+        </div>
+
+        <div class="w-full max-w-[100rem] mx-auto flex justify-center items-center text-xs font-medium uppercase tracking-wider">
+            <span id="footer-copy" class="text-zinc-500">©2026</span>
+        </div>
+    </footer>
+
+    <script>
+        const translations = {
+            en: {
+                'nav.about': 'About',
+                'nav.work': 'Work',
+                'nav.pricing': 'Pricing',
+                'nav.contact': 'Contact',
+                'hero.role': 'CAD Designer',
+                'hero.born': 'Born & Raised',
+                'hero.location': 'Barcelona, ES',
+                'hero.copy': '©2026',
+                'about.description': 'Based in Barcelona, NC CAD Services provides precise and reliable CAD design services tailored to your needs. From simple technical drawings to complete project documentation, we deliver clean, accurate and ready-to-use files.',
+                'skills.label': '(Skills)',
+                'skill.strategy.title': 'Technical CAD Drafting',
+                'skill.strategy.desc': 'High-quality 2D technical drawings developed with precision and structure. Clear, organized and ready for real-world application.',
+                'skill.webdesign.title': 'Naval Engineering Background',
+                'skill.webdesign.desc': 'Strong foundation in naval engineering with practical, hands-on experience. Focused on real technical solutions, not just theoretical design.',
+                'skill.branding.title': 'Professional & Detail-Oriented',
+                'skill.branding.desc': 'Committed to delivering clean, accurate and well-structured work. Attention to detail and consistency in every project.',
+                'section.work': 'Work',
+                'section.pricing': 'Pricing',
+                'pricing.pdf.title': 'PDF to CAD',
+                'pricing.pdf.price': 'From $80',
+                'pricing.pdf.line1': 'Convert PDF drawings into clean, professional CAD files',
+                'pricing.pdf.line2': 'Accurate scaling and well-organized layers',
+                'pricing.pdf.line3': 'Ready for use, printing or manufacturing',
+                'pricing.pdf.note': 'Final price depends on project complexity.<br>Most projects range between $80 and $200.',
+                'pricing.edit.title': 'CAD Editing & Redrawing',
+                'pricing.edit.price': 'From $110',
+                'pricing.edit.line1': 'Modify, improve or rebuild existing CAD drawings',
+                'pricing.edit.line2': 'Fix errors and optimize file structure',
+                'pricing.edit.line3': 'Clean, structured and ready-to-use results',
+                'pricing.edit.note': 'Final price depends on project complexity.<br>Most projects range between $110 and $250.',
+                'pricing.sketch.title': 'Sketch to CAD',
+                'pricing.sketch.price': 'From $140',
+                'pricing.sketch.line1': 'Convert hand sketches or images into technical drawings',
+                'pricing.sketch.line2': 'Precise interpretation and structured output',
+                'pricing.sketch.line3': 'Ideal for concepts, ideas or early-stage designs',
+                'pricing.sketch.note': 'Final price depends on project complexity.<br>Most projects range between $140 and $300.',
+                'pricing.delivery.title': 'Delivery',
+                'pricing.delivery.line1': 'Delivery time: 48-72 hours',
+                'pricing.delivery.line2': 'Need it faster? Express delivery (under 24 hours) is available for an additional fee.',
+                'section.contact': 'Contact',
+                'contact.address.label': 'Address',
+                'contact.address.line1': 'MY OFFICE,',
+                'contact.address.line2': 'BARCELONA,',
+                'contact.address.line3': 'CATALUNYA, SPAIN',
+                'contact.phone.label': 'Phone',
+                'contact.email.label': 'Email',
+                'contact.email.value': 'info@nccadservices.com',
+                'contact.email.secondary': 'contact@nccadservices.com',
+                'contact.linkedin.label': 'LinkedIn',
+                'contact.linkedin.value': 'Artur Nogué Cruells',
+                'form.firstName': 'First Name',
+                'form.lastName': 'Last Name',
+                'form.email': 'Email',
+                'form.phone': 'Phone Number',
+                'form.message': 'Message',
+                'form.submit': 'Submit',
+                'footer.role': 'CAD Designer',
+                'footer.born': 'Born & Raised',
+                'footer.location': 'Barcelona, ES',
+                'footer.copy': '©2026',
+                'footer.rights': 'All Rights Reserved'
+            },
+            es: {
+                'nav.about': 'Acerca',
+                'nav.work': 'Trabajo',
+                'nav.pricing': 'Precios',
+                'nav.contact': 'Contacto',
+                'hero.born': 'Nacida y criada',
+                'hero.location': 'Barcelona, ES',
+                'hero.copy': '©2026',
+                'about.description': 'Con base en Barcelona, NC CAD Services proporciona servicios precisos y confiables de diseño CAD adaptados a tus necesidades. Desde dibujos técnicos simples hasta documentación completa de proyectos, entregamos archivos limpios, precisos y listos para usar.',
+                'skills.label': '(Habilidades)',
+                'skill.strategy.title': 'Dibujo Técnico CAD',
+                'skill.strategy.desc': 'Dibujos técnicos 2D de alta calidad desarrollados con precisión y estructura. Claros, organizados y listos para aplicación en el mundo real.',
+                'skill.webdesign.title': 'Experiencia en Ingeniería Naval',
+                'skill.webdesign.desc': 'Fuerte formación en ingeniería naval con experiencia práctica y directa. Enfocado en soluciones técnicas reales, no solo en diseño teórico.',
+                'skill.branding.title': 'Profesional y Orientado a los Detalles',
+                'skill.branding.desc': 'Comprometido con entregar trabajo limpio, preciso y bien estructurado. Atención al detalle y consistencia en cada proyecto.',
+                'section.work': 'Trabajo',
+                'section.pricing': 'Precios',
+                'pricing.pdf.title': 'PDF a CAD',
+                'pricing.pdf.price': 'Desde 80€',
+                'pricing.pdf.line1': 'Convierte planos PDF a archivos CAD limpios y profesionales',
+                'pricing.pdf.line2': 'Escalado preciso y capas bien organizadas',
+                'pricing.pdf.line3': 'Listo para usar, imprimir o fabricar',
+                'pricing.pdf.note': 'El precio final depende de la complejidad del proyecto.<br>En la mayoria de los casos, el precio suele oscilar entre 80€ y 200€.',
+                'pricing.edit.title': 'Edicion y Redibujo CAD',
+                'pricing.edit.price': 'Desde 110€',
+                'pricing.edit.line1': 'Modifica, mejora o reconstruye dibujos CAD existentes',
+                'pricing.edit.line2': 'Corrige errores y optimiza la estructura del archivo',
+                'pricing.edit.line3': 'Resultados limpios, estructurados y listos para usar',
+                'pricing.edit.note': 'El precio final depende de la complejidad del proyecto.<br>En la mayoria de los casos, el precio suele oscilar entre 110€ y 250€.',
+                'pricing.sketch.title': 'Boceto a CAD',
+                'pricing.sketch.price': 'Desde 140€',
+                'pricing.sketch.line1': 'Convierte bocetos a mano o imágenes en dibujos técnicos',
+                'pricing.sketch.line2': 'Interpretación precisa y salida estructurada',
+                'pricing.sketch.line3': 'Ideal para conceptos, ideas o diseños en etapa inicial',
+                'pricing.sketch.note': 'El precio final depende de la complejidad del proyecto.<br>En la mayoria de los casos, el precio suele oscilar entre 140€ y 300€.',
+                'pricing.delivery.title': 'Entrega',
+                'pricing.delivery.line1': 'Tiempo de entrega: 48-72 horas',
+                'pricing.delivery.line2': '¿Lo necesitas antes? La entrega exprés (menos de 24 horas) está disponible por una tarifa adicional.',
+                'section.contact': 'Contacto',
+                'contact.address.label': 'Dirección',
+                'contact.address.line1': 'MY OFFICE,',
+                'contact.address.line2': 'BARCELONA,',
+                'contact.address.line3': 'CATALUNYA, SPAIN',
+                'contact.phone.label': 'Teléfono',
+                'contact.email.label': 'Correo',
+                'contact.email.value': 'info@nccadservices.com',
+                'contact.email.secondary': 'contact@nccadservices.com',
+                'contact.linkedin.label': 'LinkedIn',
+                'contact.linkedin.value': 'Artur Nogué Cruells',
+                'form.firstName': 'Nombre',
+                'form.lastName': 'Apellido',
+                'form.email': 'Correo',
+                'form.phone': 'Teléfono',
+                'form.message': 'Mensaje',
+                'form.submit': 'Enviar',
+                'footer.role': 'Diseñador CAD',
+                'footer.born': 'Nacida y criada',
+                'footer.location': 'Barcelona, ES',
+                'footer.copy': '©2026',
+                'footer.rights': 'Todos los derechos reservados'
+            }
+        };
+
+        const i18nMap = [
+            {id: 'nav-about', key: 'nav.about'},
+            {id: 'nav-work', key: 'nav.work'},
+            {id: 'nav-pricing', key: 'nav.pricing'},
+            {id: 'nav-contact', key: 'nav.contact'},
+            {id: 'hero-role', key: 'hero.role'},
+            {id: 'hero-born', key: 'hero.born'},
+            {id: 'hero-location', key: 'hero.location'},
+            {id: 'hero-copy', key: 'hero.copy'},
+            {id: 'about-description', key: 'about.description'},
+            {id: 'skills-label', key: 'skills.label'},
+            {id: 'skill-strategy-title', key: 'skill.strategy.title'},
+            {id: 'skill-strategy-desc', key: 'skill.strategy.desc'},
+            {id: 'skill-webdesign-title', key: 'skill.webdesign.title'},
+            {id: 'skill-webdesign-desc', key: 'skill.webdesign.desc'},
+            {id: 'skill-branding-title', key: 'skill.branding.title'},
+            {id: 'skill-branding-desc', key: 'skill.branding.desc'},
+            {id: 'section-work', key: 'section.work'},
+            {id: 'section-pricing', key: 'section.pricing'},
+            {id: 'pricing-pdf-title', key: 'pricing.pdf.title'},
+            {id: 'pricing-pdf-price', key: 'pricing.pdf.price'},
+            {id: 'pricing-pdf-line1', key: 'pricing.pdf.line1'},
+            {id: 'pricing-pdf-line2', key: 'pricing.pdf.line2'},
+            {id: 'pricing-pdf-line3', key: 'pricing.pdf.line3'},
+            {id: 'pricing-pdf-note', key: 'pricing.pdf.note'},
+            {id: 'pricing-edit-title', key: 'pricing.edit.title'},
+            {id: 'pricing-edit-price', key: 'pricing.edit.price'},
+            {id: 'pricing-edit-line1', key: 'pricing.edit.line1'},
+            {id: 'pricing-edit-line2', key: 'pricing.edit.line2'},
+            {id: 'pricing-edit-line3', key: 'pricing.edit.line3'},
+            {id: 'pricing-edit-note', key: 'pricing.edit.note'},
+            {id: 'pricing-sketch-title', key: 'pricing.sketch.title'},
+            {id: 'pricing-sketch-price', key: 'pricing.sketch.price'},
+            {id: 'pricing-sketch-line1', key: 'pricing.sketch.line1'},
+            {id: 'pricing-sketch-line2', key: 'pricing.sketch.line2'},
+            {id: 'pricing-sketch-line3', key: 'pricing.sketch.line3'},
+            {id: 'pricing-sketch-note', key: 'pricing.sketch.note'},
+            {id: 'pricing-delivery-title', key: 'pricing.delivery.title'},
+            {id: 'pricing-delivery-line1', key: 'pricing.delivery.line1'},
+            {id: 'pricing-delivery-line2', key: 'pricing.delivery.line2'},
+            {id: 'section-contact', key: 'section.contact'},
+            {id: 'contact-address-label', key: 'contact.address.label'},
+            {id: 'contact-address-line1', key: 'contact.address.line1'},
+            {id: 'contact-address-line2', key: 'contact.address.line2'},
+            {id: 'contact-address-line3', key: 'contact.address.line3'},
+            {id: 'contact-phone-label', key: 'contact.phone.label'},
+            {id: 'contact-email-label', key: 'contact.email.label'},
+            {id: 'contact-email-value', key: 'contact.email.value'},
+            {id: 'contact-email-secondary', key: 'contact.email.secondary'},
+            {id: 'contact-linkedin-label', key: 'contact.linkedin.label'},
+            {id: 'contact-linkedin-value', key: 'contact.linkedin.value'},
+            {id: 'footer-role', key: 'footer.role'},
+            {id: 'footer-born', key: 'footer.born'},
+            {id: 'footer-location', key: 'footer.location'},
+            {id: 'footer-copy', key: 'footer.copy'},
+            {id: 'footer-rights', key: 'footer.rights'}
+        ];
+
+        const formMap = [
+            {id: 'form-first-name', key: 'form.firstName'},
+            {id: 'form-last-name', key: 'form.lastName'},
+            {id: 'form-email', key: 'form.email'},
+            {id: 'form-phone', key: 'form.phone'},
+            {id: 'form-message', key: 'form.message'},
+            {id: 'form-submit', key: 'form.submit'}
+        ];
+
+        const htmlTranslationIds = new Set([
+            'pricing-pdf-note',
+            'pricing-edit-note',
+            'pricing-sketch-note'
+        ]);
+
+        function setTheme(theme) {
+            const resolvedTheme = theme === 'light' ? 'light' : 'dark';
+            document.documentElement.dataset.theme = resolvedTheme;
+            localStorage.setItem('siteTheme', resolvedTheme);
+
+            document.querySelectorAll('.theme-option').forEach((button) => {
+                const isActive = button.dataset.themeOption === resolvedTheme;
+                button.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+            });
+        }
+
+        function setLanguage(lang) {
+            const dict = translations[lang] || translations.en;
+            i18nMap.forEach(item => {
+                const el = document.getElementById(item.id);
+                if (!el || dict[item.key] === undefined) return;
+                if (htmlTranslationIds.has(item.id)) {
+                    el.innerHTML = dict[item.key];
+                    return;
+                }
+                el.textContent = dict[item.key];
+            });
+            formMap.forEach(item => {
+                const field = document.getElementById(item.id);
+                if (!field || dict[item.key] === undefined) return;
+                if (field.tagName === 'INPUT' || field.tagName === 'TEXTAREA') {
+                    field.placeholder = dict[item.key];
+                } else {
+                    field.textContent = dict[item.key];
+                }
+            });
+
+            document.querySelectorAll('.lang-option').forEach((button) => {
+                const isActive = button.dataset.lang === lang;
+                button.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+            });
+            
+            document.documentElement.lang = lang;
+            localStorage.setItem('siteLanguage', lang);
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            const stored = localStorage.getItem('siteLanguage') || 'en';
+            const storedTheme = localStorage.getItem('siteTheme') || document.documentElement.dataset.theme || 'dark';
+            document.querySelectorAll('.lang-option').forEach((button) => {
+                button.addEventListener('click', () => {
+                    setLanguage(button.dataset.lang);
+                });
+            });
+            document.querySelectorAll('.theme-option').forEach((button) => {
+                button.addEventListener('click', () => {
+                    setTheme(button.dataset.themeOption);
+                });
+            });
+            
+            setTheme(storedTheme);
+            setLanguage(stored);
+        });
+    </script>
+
+</body></html>
