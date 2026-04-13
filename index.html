@@ -274,6 +274,163 @@ html[data-theme="light"] ::selection {
 background: rgba(28,25,23,0.18);
 color: #161310;
 }
+
+/* ===================== RESPONSIVE STYLES ===================== */
+
+/* Mobile menu overlay */
+#mobile-menu {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 55;
+    background: rgba(5,5,5,0.97);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#mobile-menu.is-open {
+    display: flex;
+}
+#mobile-menu-close {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    background: none;
+    border: none;
+    color: rgba(244,244,245,0.7);
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    line-height: 1;
+    transition: color 200ms ease;
+}
+#mobile-menu-close:hover { color: #fafafa; }
+.mobile-nav-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+.mobile-nav-links a {
+    font-size: 1.5rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(244,244,245,0.75);
+    text-decoration: none;
+    transition: color 200ms ease;
+}
+.mobile-nav-links a:hover { color: #fafafa; }
+.mobile-controls {
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+.mobile-lang-switch {
+    display: flex;
+    gap: 0.375rem;
+}
+.mobile-theme-switch {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+/* Light theme – mobile menu */
+html[data-theme="light"] #mobile-menu {
+    background: rgba(240,237,231,0.97);
+}
+html[data-theme="light"] #mobile-menu-close,
+html[data-theme="light"] .mobile-nav-links a {
+    color: rgba(44,36,28,0.75);
+}
+html[data-theme="light"] #mobile-menu-close:hover,
+html[data-theme="light"] .mobile-nav-links a:hover {
+    color: #161310;
+}
+
+/* ---- Tablet & Mobile: up to 1023px (hamburger visible) ---- */
+@media (max-width: 1023px) {
+    /* Hero title row: stack vertically */
+    #hero-title-row {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 1.25rem;
+    }
+    #hero-mark {
+        height: 5rem;
+    }
+    /* Hero title font size for tablet */
+    #hero-title-row h1 {
+        font-size: clamp(2.5rem, 7vw, 5.5rem);
+        letter-spacing: 0.18em;
+    }
+}
+
+/* ---- Mobile only: up to 767px ---- */
+@media (max-width: 767px) {
+    /* Reduce top padding on hero so content isn't buried under nav */
+    header.relative {
+        padding-top: 6rem;
+    }
+    /* Hero title: much smaller */
+    #hero-title-row h1 {
+        font-size: clamp(1.75rem, 10vw, 3.25rem);
+        letter-spacing: 0.12em;
+    }
+    #hero-mark {
+        height: 3.5rem;
+    }
+    /* About description heading */
+    #about-description {
+        font-size: clamp(1.5rem, 6vw, 2.25rem);
+        margin-bottom: 2rem;
+    }
+    /* Section headings (Work, Pricing, Contact) */
+    #section-work,
+    #section-pricing,
+    #section-contact {
+        font-size: clamp(2.5rem, 12vw, 3.75rem);
+    }
+    /* Project titles in Work */
+    #work .group h3 {
+        font-size: clamp(1.75rem, 7vw, 2.25rem);
+    }
+    /* Reduce section vertical padding */
+    section {
+        padding-top: 3.5rem;
+        padding-bottom: 3.5rem;
+    }
+    /* Footer logo smaller on mobile */
+    #footer-logo {
+        height: 8rem;
+    }
+    /* Footer top padding */
+    footer {
+        padding-top: 4rem;
+    }
+    /* Footer bottom section spacing */
+    footer .mb-24 {
+        margin-bottom: 3rem;
+    }
+}
+
+/* ---- Tablet only: 768px – 1023px ---- */
+@media (min-width: 768px) and (max-width: 1023px) {
+    /* About description heading */
+    #about-description {
+        font-size: clamp(2rem, 5vw, 3rem);
+        margin-bottom: 4rem;
+    }
+    /* Footer logo size */
+    #footer-logo {
+        height: 12rem;
+    }
+}
 </style><!-- aura-ga4-start -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-2M6V79H761"></script>
 <script>
@@ -292,17 +449,18 @@ gtag('config', 'G-2M6V79H761');
             <img id="nav-logo" src="Logos/Logo_SenseFons.png" alt="NC CAD Services" class="h-full w-full object-contain object-left">
         </a>
         
-        <div class="hidden md:flex items-center space-x-12">
+        <div class="hidden lg:flex items-center space-x-12">
             <a id="nav-about" href="#about" class="hover:text-zinc-100 transition-colors">About</a>
             <a id="nav-work" href="#work" class="hover:text-zinc-100 transition-colors">Work</a>
             <a id="nav-pricing" href="#pricing" class="hover:text-zinc-100 transition-colors">Pricing</a>
             <a id="nav-contact" href="#contact" class="hover:text-zinc-100 transition-colors">Contact</a>
         </div>
 
-        <div class="w-[6.25rem] md:w-[6.25rem]" aria-hidden="true"></div>
+        <button id="nav-hamburger" class="flex lg:hidden items-center justify-center w-8 h-8 focus:outline-none" aria-label="Open menu" aria-expanded="false" style="font-size:1.4rem;">☰</button>
+        <div class="hidden lg:block w-[6.25rem]" aria-hidden="true"></div>
     </nav>
 
-    <div class="fixed top-6 right-6 md:right-12 z-[60]">
+    <div class="fixed top-6 right-6 lg:right-12 z-[60] hidden lg:block">
         <div class="control-stack">
             <div class="flex items-center gap-1.5" role="group" aria-label="Select language">
                 <button type="button" class="lang-option outline-none focus-visible:ring-1 focus-visible:ring-zinc-200/70" data-lang="en" aria-pressed="true">
@@ -323,11 +481,32 @@ gtag('config', 'G-2M6V79H761');
         </div>
     </div>
 
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" role="dialog" aria-modal="true" aria-label="Navigation menu">
+        <button id="mobile-menu-close" aria-label="Close menu">✕</button>
+        <div class="mobile-nav-links">
+            <a id="nav-about-mobile" href="#about">About</a>
+            <a id="nav-work-mobile" href="#work">Work</a>
+            <a id="nav-pricing-mobile" href="#pricing">Pricing</a>
+            <a id="nav-contact-mobile" href="#contact">Contact</a>
+        </div>
+        <div class="mobile-controls">
+            <div class="mobile-lang-switch" role="group" aria-label="Select language">
+                <button type="button" class="lang-option outline-none" data-lang="en" aria-pressed="true"><span>EN</span></button>
+                <button type="button" class="lang-option outline-none" data-lang="es" aria-pressed="false"><span>ES</span></button>
+            </div>
+            <div class="mobile-theme-switch" role="group" aria-label="Select theme">
+                <button type="button" class="theme-option outline-none" data-theme-option="light" aria-pressed="false" aria-label="Light mode"><iconify-icon icon="solar:sun-2-linear"></iconify-icon></button>
+                <button type="button" class="theme-option outline-none" data-theme-option="dark" aria-pressed="true" aria-label="Dark mode"><iconify-icon icon="solar:moon-linear"></iconify-icon></button>
+            </div>
+        </div>
+    </div>
+
     <!-- Hero Section -->
     <header class="relative w-full pt-40 pb-20 flex flex-col items-center">
         <div class="w-full max-w-[100rem] mx-auto px-6 md:px-12 flex flex-col items-center justify-center mb-12 gap-8">
             <!-- Two column layout with logo and text -->
-            <div class="flex items-center justify-center gap-8 md:gap-20">
+            <div id="hero-title-row" class="flex items-center justify-center gap-8 md:gap-20">
                 <img id="hero-mark" src="Logos/NC_Blanc.png" alt="NC" class="h-32 md:h-40 w-auto flex-shrink-0">
                 <h1 class="text-9xl md:text-10xl font-extralight tracking-widest text-zinc-100 leading-none">CAD SERVICES</h1>
             </div>
@@ -765,6 +944,10 @@ gtag('config', 'G-2M6V79H761');
             {id: 'nav-work', key: 'nav.work'},
             {id: 'nav-pricing', key: 'nav.pricing'},
             {id: 'nav-contact', key: 'nav.contact'},
+            {id: 'nav-about-mobile', key: 'nav.about'},
+            {id: 'nav-work-mobile', key: 'nav.work'},
+            {id: 'nav-pricing-mobile', key: 'nav.pricing'},
+            {id: 'nav-contact-mobile', key: 'nav.contact'},
             {id: 'hero-role', key: 'hero.role'},
             {id: 'hero-born', key: 'hero.born'},
             {id: 'hero-location', key: 'hero.location'},
@@ -901,6 +1084,31 @@ gtag('config', 'G-2M6V79H761');
                 es: '✗ Error al enviar. Inténtalo de nuevo.'
             }
         };
+
+        // Hamburger menu
+        const hamburgerBtn = document.getElementById('nav-hamburger');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuClose = document.getElementById('mobile-menu-close');
+
+        function openMobileMenu() {
+            mobileMenu.classList.add('is-open');
+            hamburgerBtn.setAttribute('aria-expanded', 'true');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeMobileMenu() {
+            mobileMenu.classList.remove('is-open');
+            hamburgerBtn.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = '';
+        }
+
+        hamburgerBtn.addEventListener('click', openMobileMenu);
+        mobileMenuClose.addEventListener('click', closeMobileMenu);
+        document.querySelectorAll('#mobile-menu .mobile-nav-links a').forEach(function(link) {
+            link.addEventListener('click', closeMobileMenu);
+        });
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && mobileMenu.classList.contains('is-open')) closeMobileMenu();
+        });
 
         contactForm.addEventListener('submit', async function(e) {
             e.preventDefault();
