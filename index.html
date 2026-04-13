@@ -792,13 +792,13 @@ gtag('config', 'G-2M6V79H761');
             button.addEventListener('click', () => setLanguage(button.dataset.lang));
         });
 
-        setLanguage(localStorage.getItem('siteLanguage') || 'en');
-
-        // Contact form submission
+        // Contact form refs — must be declared before setLanguage() is called
         const contactForm = document.getElementById('contact-form');
         const formFeedback = document.getElementById('form-feedback');
         const formSubmitBtn = document.getElementById('form-submit');
         let formState = null; // 'success' | 'error' | null
+
+        setLanguage(localStorage.getItem('siteLanguage') || 'en');
 
         const formFeedbackText = {
             success: {
