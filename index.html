@@ -472,7 +472,7 @@ gtag('config', 'G-2M6V79H761');
 
         <div class="flex flex-col border-t border-zinc-900">
             <!-- Project Item -->
-            <a href="javascript:void(0)" data-images="Work/PDFtoCAD_A4.png|Work/PDF.png" class="work-item group relative flex flex-row items-center justify-between py-8 border-b border-zinc-900 hover:bg-zinc-900/20 transition-colors px-4 -mx-4">
+            <a href="javascript:void(0)" onclick="window.openWorkLightbox('Work/PDFtoCAD_A4.png|Work/PDF.png')" class="work-item group relative flex flex-row items-center justify-between py-8 border-b border-zinc-900 hover:bg-zinc-900/20 transition-colors px-4 -mx-4">
                 <div class="z-10">
                     <h3 class="text-2xl sm:text-4xl md:text-5xl font-extralight tracking-tighter text-zinc-100 group-hover:text-white transition-colors">PDF to CAD</h3>
                 </div>
@@ -493,7 +493,7 @@ gtag('config', 'G-2M6V79H761');
             </a>
             
             <!-- Project Item -->
-            <a href="javascript:void(0)" data-images="Work/TechnicalDrawing.png" class="work-item group relative flex flex-row items-center justify-between py-8 border-b border-zinc-900 hover:bg-zinc-900/20 transition-colors px-4 -mx-4">
+            <a href="javascript:void(0)" onclick="window.openWorkLightbox('Work/TechnicalDrawing.png')" class="work-item group relative flex flex-row items-center justify-between py-8 border-b border-zinc-900 hover:bg-zinc-900/20 transition-colors px-4 -mx-4">
                 <div class="z-10">
                     <h3 class="text-2xl sm:text-4xl md:text-5xl font-extralight tracking-tighter text-zinc-100 group-hover:text-white transition-colors">Technical drawing</h3>
                 </div>
@@ -506,7 +506,7 @@ gtag('config', 'G-2M6V79H761');
             </a>
 
             <!-- Project Item -->
-            <a href="javascript:void(0)" data-images="Work/SKETCHtoCAD.png|Work/Sketch.png" class="work-item group relative flex flex-row items-center justify-between py-8 border-b border-zinc-900 hover:bg-zinc-900/20 transition-colors px-4 -mx-4">
+            <a href="javascript:void(0)" onclick="window.openWorkLightbox('Work/SKETCHtoCAD.png|Work/Sketch.png')" class="work-item group relative flex flex-row items-center justify-between py-8 border-b border-zinc-900 hover:bg-zinc-900/20 transition-colors px-4 -mx-4">
                 <div class="z-10">
                     <h3 class="text-2xl sm:text-4xl md:text-5xl font-extralight tracking-tighter text-zinc-100 group-hover:text-white transition-colors">Sketch to CAD</h3>
                 </div>
@@ -526,7 +526,7 @@ gtag('config', 'G-2M6V79H761');
             </a>
 
             <!-- Project Item -->
-            <a href="javascript:void(0)" data-images="Work/Welded piece.png" class="work-item group relative flex flex-row items-center justify-between py-8 border-b border-zinc-900 hover:bg-zinc-900/20 transition-colors px-4 -mx-4">
+            <a href="javascript:void(0)" onclick="window.openWorkLightbox('Work/Welded piece.png')" class="work-item group relative flex flex-row items-center justify-between py-8 border-b border-zinc-900 hover:bg-zinc-900/20 transition-colors px-4 -mx-4">
                 <div class="z-10">
                     <h3 class="text-2xl sm:text-4xl md:text-5xl font-extralight tracking-tighter text-zinc-100 group-hover:text-white transition-colors">Welded Assembly</h3>
                 </div>
@@ -541,9 +541,9 @@ gtag('config', 'G-2M6V79H761');
     </section>
 
     <!-- Work Image Lightbox -->
-    <div id="work-lightbox" style="display:none; position:fixed; inset:0; z-index:80; background:rgba(0,0,0,0.95); flex-direction:column; align-items:center; justify-content:center; padding:1.5rem;">
-        <button id="lightbox-close" style="position:absolute; top:1.25rem; right:1.25rem; background:none; border:none; color:rgba(244,244,245,0.8); font-size:1.75rem; cursor:pointer; line-height:1; padding:0.5rem;">✕</button>
-        <div id="lightbox-images" style="display:flex; flex-direction:column; gap:1rem; width:100%; max-width:600px; max-height:80vh; overflow-y:auto;"></div>
+    <div id="work-lightbox" onclick="if(event.target===this)window.closeWorkLightbox()" style="display:none; position:fixed; inset:0; z-index:80; background:rgba(0,0,0,0.95); flex-direction:column; align-items:center; justify-content:center; padding:1.5rem;">
+        <button onclick="window.closeWorkLightbox()" style="position:absolute; top:1.25rem; right:1.25rem; background:none; border:none; color:rgba(244,244,245,0.8); font-size:1.75rem; cursor:pointer; line-height:1; padding:0.5rem;">✕</button>
+        <div id="lightbox-images" onclick="event.stopPropagation()" style="display:flex; flex-direction:column; gap:1rem; width:100%; max-width:600px; max-height:80vh; overflow-y:auto;"></div>
     </div>
 
     <!-- Pricing Section -->
@@ -985,45 +985,27 @@ gtag('config', 'G-2M6V79H761');
             }
         };
 
-        // Work image lightbox
-        const lightbox = document.getElementById('work-lightbox');
-        const lightboxImages = document.getElementById('lightbox-images');
-        const lightboxClose = document.getElementById('lightbox-close');
-
-        function openLightbox(imagePaths) {
-            lightboxImages.innerHTML = '';
-            imagePaths.forEach(function(src) {
+        // Work image lightbox – global functions for inline onclick
+        window.openWorkLightbox = function(imagesStr) {
+            var lb = document.getElementById('work-lightbox');
+            var container = document.getElementById('lightbox-images');
+            container.innerHTML = '';
+            imagesStr.split('|').forEach(function(src) {
                 var img = document.createElement('img');
                 img.src = src.trim();
-                img.style.cssText = 'width:100%;height:auto;object-fit:contain;border-radius:0.5rem;';
-                lightboxImages.appendChild(img);
+                img.alt = '';
+                img.style.cssText = 'width:100%;height:auto;object-fit:contain;border-radius:0.5rem;display:block;';
+                container.appendChild(img);
             });
-            lightbox.style.display = 'flex';
+            lb.style.display = 'flex';
             document.body.style.overflow = 'hidden';
-        }
-        function closeLightbox() {
-            lightbox.style.display = 'none';
+        };
+        window.closeWorkLightbox = function() {
+            document.getElementById('work-lightbox').style.display = 'none';
             document.body.style.overflow = '';
-        }
-
-        lightboxClose.addEventListener('click', closeLightbox);
-        lightbox.addEventListener('click', function(e) {
-            if (e.target === lightbox) closeLightbox();
-        });
+        };
         document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape' && lightbox.style.display === 'flex') closeLightbox();
-        });
-
-        document.querySelectorAll('.work-item').forEach(function(item) {
-            function handleWorkTap(e) {
-                e.preventDefault();
-                e.stopPropagation();
-                var images = item.getAttribute('data-images');
-                if (images) openLightbox(images.split('|'));
-                return false;
-            }
-            item.addEventListener('click', handleWorkTap);
-            item.addEventListener('touchend', handleWorkTap, { passive: false });
+            if (e.key === 'Escape') window.closeWorkLightbox();
         });
 
         contactForm.addEventListener('submit', async function(e) {
