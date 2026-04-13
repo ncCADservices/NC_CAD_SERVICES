@@ -277,86 +277,19 @@ color: #161310;
 
 /* ===================== RESPONSIVE STYLES ===================== */
 
-/* Mobile menu overlay */
-#mobile-menu {
-    display: none;
-    position: fixed;
-    inset: 0;
-    z-index: 55;
-    background: rgba(5,5,5,0.97);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-#mobile-menu.is-open {
-    display: flex;
-}
-#mobile-menu-close {
-    position: absolute;
-    top: 1.5rem;
-    right: 1.5rem;
-    background: none;
-    border: none;
-    color: rgba(244,244,245,0.7);
-    font-size: 1.5rem;
-    cursor: pointer;
-    padding: 0.5rem;
-    line-height: 1;
-    transition: color 200ms ease;
-}
-#mobile-menu-close:hover { color: #fafafa; }
-.mobile-nav-links {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-}
-.mobile-nav-links a {
-    font-size: 1.5rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: rgba(244,244,245,0.75);
-    text-decoration: none;
-    transition: color 200ms ease;
-}
-.mobile-nav-links a:hover { color: #fafafa; }
-.mobile-controls {
-    margin-top: 3rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-}
-.mobile-lang-switch {
-    display: flex;
-    gap: 0.375rem;
-}
-.mobile-theme-switch {
-    display: flex;
-    align-items: center;
-    gap: 0.35rem;
+/* Work section title centered on mobile */
+@media (max-width: 1023px) {
+    #section-work {
+        text-align: center;
+    }
 }
 
-/* Light theme – mobile menu */
-html[data-theme="light"] #mobile-menu {
+/* Light theme: lightbox */
+html[data-theme="light"] #work-lightbox {
     background: rgba(240,237,231,0.97);
 }
-html[data-theme="light"] #mobile-menu-close,
-html[data-theme="light"] .mobile-nav-links a {
-    color: rgba(44,36,28,0.75);
-}
-html[data-theme="light"] #mobile-menu-close:hover,
-html[data-theme="light"] .mobile-nav-links a:hover {
-    color: #161310;
-}
-
-/* Ensure desktop controls are NEVER visible below lg breakpoint */
-@media (max-width: 1023px) {
-    #desktop-controls {
-        display: none !important;
-    }
+html[data-theme="light"] #lightbox-close {
+    color: rgba(44,36,28,0.8);
 }
 
 /* ---- Mobile only: up to 767px ---- */
@@ -430,11 +363,10 @@ gtag('config', 'G-2M6V79H761');
             <a id="nav-contact" href="#contact" class="hover:text-zinc-100 transition-colors">Contact</a>
         </div>
 
-        <button id="nav-hamburger" class="flex lg:hidden items-center justify-center w-8 h-8 focus:outline-none" aria-label="Open menu" aria-expanded="false" style="font-size:1.4rem;">☰</button>
         <div class="hidden lg:block w-[6.25rem]" aria-hidden="true"></div>
     </nav>
 
-    <div id="desktop-controls" class="fixed top-6 right-6 lg:right-12 z-[60] hidden lg:block">
+    <div id="desktop-controls" class="fixed top-6 right-6 lg:right-12 z-[60]">
         <div class="control-stack">
             <div class="flex items-center gap-1.5" role="group" aria-label="Select language">
                 <button type="button" class="lang-option outline-none focus-visible:ring-1 focus-visible:ring-zinc-200/70" data-lang="en" aria-pressed="true">
@@ -455,27 +387,6 @@ gtag('config', 'G-2M6V79H761');
         </div>
     </div>
 
-    <!-- Mobile Menu Overlay -->
-    <div id="mobile-menu" role="dialog" aria-modal="true" aria-label="Navigation menu">
-        <button id="mobile-menu-close" aria-label="Close menu">✕</button>
-        <div class="mobile-nav-links">
-            <a id="nav-about-mobile" href="#about">About</a>
-            <a id="nav-work-mobile" href="#work">Work</a>
-            <a id="nav-pricing-mobile" href="#pricing">Pricing</a>
-            <a id="nav-contact-mobile" href="#contact">Contact</a>
-        </div>
-        <div class="mobile-controls">
-            <div class="mobile-lang-switch" role="group" aria-label="Select language">
-                <button type="button" class="lang-option outline-none" data-lang="en" aria-pressed="true"><span>EN</span></button>
-                <button type="button" class="lang-option outline-none" data-lang="es" aria-pressed="false"><span>ES</span></button>
-            </div>
-            <div class="mobile-theme-switch" role="group" aria-label="Select theme">
-                <button type="button" class="theme-option outline-none" data-theme-option="light" aria-pressed="false" aria-label="Light mode"><iconify-icon icon="solar:sun-2-linear"></iconify-icon></button>
-                <button type="button" class="theme-option outline-none" data-theme-option="dark" aria-pressed="true" aria-label="Dark mode"><iconify-icon icon="solar:moon-linear"></iconify-icon></button>
-            </div>
-        </div>
-    </div>
-
     <!-- Hero Section -->
     <header class="relative w-full pt-24 lg:pt-40 pb-10 lg:pb-20 flex flex-col items-center">
         <div id="hero-title-container" class="w-full max-w-[100rem] mx-auto px-6 md:px-12 flex flex-col items-center justify-center mb-6 lg:mb-12 gap-8">
@@ -486,7 +397,7 @@ gtag('config', 'G-2M6V79H761');
             </div>
         </div>
         
-        <div class="relative w-full max-w-[100rem] mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between items-start md:items-end text-xs uppercase tracking-widest text-zinc-500 mb-12 gap-4">
+        <div class="relative w-full max-w-[100rem] mx-auto px-6 md:px-12 flex flex-row justify-between items-start md:items-end text-xs uppercase tracking-widest text-zinc-500 mb-12 gap-4">
             <div>
                 <p class="text-zinc-300 mb-1">Artur Nogué Cruells</p>
                 <p id="hero-role">CAD Designer</p>
@@ -561,11 +472,11 @@ gtag('config', 'G-2M6V79H761');
 
         <div class="flex flex-col border-t border-zinc-900">
             <!-- Project Item -->
-            <a href="#" class="group relative flex flex-col md:flex-row items-start md:items-center justify-between py-12 border-b border-zinc-900 hover:bg-zinc-900/20 transition-colors px-4 -mx-4">
-                <div class="flex flex-col md:flex-row md:items-center gap-4 md:gap-12 z-10">
-                    <h3 class="text-4xl md:text-5xl font-extralight tracking-tighter text-zinc-100 group-hover:text-white transition-colors">PDF to CAD</h3>
+            <a href="#" data-images="Work/PDFtoCAD_A4.png|Work/PDF.png" class="work-item group relative flex flex-row items-center justify-between py-8 border-b border-zinc-900 hover:bg-zinc-900/20 transition-colors px-4 -mx-4">
+                <div class="z-10">
+                    <h3 class="text-2xl sm:text-4xl md:text-5xl font-extralight tracking-tighter text-zinc-100 group-hover:text-white transition-colors">PDF to CAD</h3>
                 </div>
-                <div class="flex flex-col md:flex-row md:items-center gap-4 md:gap-12 mt-4 md:mt-0 z-10">
+                <div class="z-10 flex-shrink-0 ml-4">
                     <span class="text-xs text-zinc-500">2026</span>
                 </div>
                 <!-- Hover Image Reveal (Desktop only for neatness) -->
@@ -582,11 +493,11 @@ gtag('config', 'G-2M6V79H761');
             </a>
             
             <!-- Project Item -->
-            <a href="#" class="group relative flex flex-col md:flex-row items-start md:items-center justify-between py-12 border-b border-zinc-900 hover:bg-zinc-900/20 transition-colors px-4 -mx-4">
-                <div class="flex flex-col md:flex-row md:items-center gap-4 md:gap-12 z-10">
-                    <h3 class="text-4xl md:text-5xl font-extralight tracking-tighter text-zinc-100 group-hover:text-white transition-colors">Technical drawing</h3>
+            <a href="#" data-images="Work/TechnicalDrawing.png" class="work-item group relative flex flex-row items-center justify-between py-8 border-b border-zinc-900 hover:bg-zinc-900/20 transition-colors px-4 -mx-4">
+                <div class="z-10">
+                    <h3 class="text-2xl sm:text-4xl md:text-5xl font-extralight tracking-tighter text-zinc-100 group-hover:text-white transition-colors">Technical drawing</h3>
                 </div>
-                <div class="flex flex-col md:flex-row md:items-center gap-4 md:gap-12 mt-4 md:mt-0 z-10">
+                <div class="z-10 flex-shrink-0 ml-4">
                     <span class="text-xs text-zinc-500">2025</span>
                 </div>
                 <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[420px] rounded-lg overflow-hidden opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 transition-all duration-500 pointer-events-none z-0 hidden lg:block shadow-2xl">
@@ -595,11 +506,11 @@ gtag('config', 'G-2M6V79H761');
             </a>
 
             <!-- Project Item -->
-            <a href="#" class="group relative flex flex-col md:flex-row items-start md:items-center justify-between py-12 border-b border-zinc-900 hover:bg-zinc-900/20 transition-colors px-4 -mx-4">
-                <div class="flex flex-col md:flex-row md:items-center gap-4 md:gap-12 z-10">
-                    <h3 class="text-4xl md:text-5xl font-extralight tracking-tighter text-zinc-100 group-hover:text-white transition-colors">Sketch to CAD</h3>
+            <a href="#" data-images="Work/SKETCHtoCAD.png|Work/Sketch.png" class="work-item group relative flex flex-row items-center justify-between py-8 border-b border-zinc-900 hover:bg-zinc-900/20 transition-colors px-4 -mx-4">
+                <div class="z-10">
+                    <h3 class="text-2xl sm:text-4xl md:text-5xl font-extralight tracking-tighter text-zinc-100 group-hover:text-white transition-colors">Sketch to CAD</h3>
                 </div>
-                <div class="flex flex-col md:flex-row md:items-center gap-4 md:gap-12 mt-4 md:mt-0 z-10">
+                <div class="z-10 flex-shrink-0 ml-4">
                     <span class="text-xs text-zinc-500">2026</span>
                 </div>
                 <div class="absolute left-[58%] top-1/2 -translate-x-1/2 -translate-y-1/2 w-[860px] rounded-lg overflow-hidden opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 transition-all duration-500 pointer-events-none z-0 hidden lg:block shadow-2xl">
@@ -615,11 +526,11 @@ gtag('config', 'G-2M6V79H761');
             </a>
 
             <!-- Project Item -->
-            <a href="#" class="group relative flex flex-col md:flex-row items-start md:items-center justify-between py-12 border-b border-zinc-900 hover:bg-zinc-900/20 transition-colors px-4 -mx-4">
-                <div class="flex flex-col md:flex-row md:items-center gap-4 md:gap-12 z-10">
-                    <h3 class="text-4xl md:text-5xl font-extralight tracking-tighter text-zinc-100 group-hover:text-white transition-colors">Welded Assembly</h3>
+            <a href="#" data-images="Work/Welded piece.png" class="work-item group relative flex flex-row items-center justify-between py-8 border-b border-zinc-900 hover:bg-zinc-900/20 transition-colors px-4 -mx-4">
+                <div class="z-10">
+                    <h3 class="text-2xl sm:text-4xl md:text-5xl font-extralight tracking-tighter text-zinc-100 group-hover:text-white transition-colors">Welded Assembly</h3>
                 </div>
-                <div class="flex flex-col md:flex-row md:items-center gap-4 md:gap-12 mt-4 md:mt-0 z-10">
+                <div class="z-10 flex-shrink-0 ml-4">
                     <span class="text-xs text-zinc-500">2024</span>
                 </div>
                 <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[420px] rounded-lg overflow-hidden opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 transition-all duration-500 pointer-events-none z-0 hidden lg:block shadow-2xl">
@@ -628,6 +539,12 @@ gtag('config', 'G-2M6V79H761');
             </a>
         </div>
     </section>
+
+    <!-- Work Image Lightbox -->
+    <div id="work-lightbox" style="display:none; position:fixed; inset:0; z-index:80; background:rgba(0,0,0,0.95); flex-direction:column; align-items:center; justify-content:center; padding:1.5rem;">
+        <button id="lightbox-close" style="position:absolute; top:1.25rem; right:1.25rem; background:none; border:none; color:rgba(244,244,245,0.8); font-size:1.75rem; cursor:pointer; line-height:1; padding:0.5rem;">✕</button>
+        <div id="lightbox-images" style="display:flex; flex-direction:column; gap:1rem; width:100%; max-width:600px; max-height:80vh; overflow-y:auto;"></div>
+    </div>
 
     <!-- Pricing Section -->
     <section id="pricing" class="py-24 px-6 md:px-12 max-w-[100rem] mx-auto">
@@ -765,17 +682,25 @@ gtag('config', 'G-2M6V79H761');
             <img id="footer-logo" src="Logos/Logo_CAD_SERVICES.png" alt="NC CAD Services" class="h-64 w-auto" loading="lazy" decoding="async">
         </div>
 
-        <div class="relative w-full flex flex-col lg:flex-row justify-between items-start lg:items-end text-xs uppercase tracking-widest text-zinc-500 mb-12 lg:mb-20 gap-4 lg:gap-8 max-w-[100rem] mx-auto">
-            <div>
-                <p class="text-zinc-300 mb-1">Artur Nogué Cruells</p>
-                <p id="footer-role">CAD Designer</p>
+        <div id="footer-info-row" class="relative w-full text-xs uppercase tracking-widest text-zinc-500 mb-12 lg:mb-20 max-w-[100rem] mx-auto">
+            <!-- Top row: name left, born right (mobile & tablet); desktop uses flex justify-between -->
+            <div class="flex flex-row justify-between items-start lg:items-end gap-4 mb-4 lg:mb-0">
+                <div>
+                    <p class="text-zinc-300 mb-1">Artur Nogué Cruells</p>
+                    <p id="footer-role">CAD Designer</p>
+                </div>
+                <div class="text-right lg:text-center lg:absolute lg:left-1/2 lg:-translate-x-1/2">
+                    <p class="text-zinc-300 mb-1" id="footer-born">Born &amp; Raised</p>
+                    <p id="footer-location">Barcelona, ES</p>
+                </div>
+                <!-- Desktop only: All Rights on the right -->
+                <div class="hidden lg:block lg:text-right">
+                    <p id="footer-rights">All Rights Reserved</p>
+                </div>
             </div>
-            <div class="text-left lg:text-center lg:absolute lg:left-1/2 lg:-translate-x-1/2">
-                <p class="text-zinc-300 mb-1" id="footer-born">Born &amp; Raised</p>
-                <p id="footer-location">Barcelona, ES</p>
-            </div>
-            <div class="text-left lg:text-right">
-                <p id="footer-rights">All Rights Reserved</p>
+            <!-- Mobile/tablet only: All Rights centered below -->
+            <div class="text-center lg:hidden">
+                <p id="footer-rights-mobile">All Rights Reserved</p>
             </div>
         </div>
 
@@ -972,7 +897,8 @@ gtag('config', 'G-2M6V79H761');
             {id: 'footer-born', key: 'footer.born'},
             {id: 'footer-location', key: 'footer.location'},
             {id: 'footer-copy', key: 'footer.copy'},
-            {id: 'footer-rights', key: 'footer.rights'}
+            {id: 'footer-rights', key: 'footer.rights'},
+            {id: 'footer-rights-mobile', key: 'footer.rights'}
         ];
 
         const formMap = [
@@ -1059,29 +985,41 @@ gtag('config', 'G-2M6V79H761');
             }
         };
 
-        // Hamburger menu
-        const hamburgerBtn = document.getElementById('nav-hamburger');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const mobileMenuClose = document.getElementById('mobile-menu-close');
+        // Work image lightbox
+        const lightbox = document.getElementById('work-lightbox');
+        const lightboxImages = document.getElementById('lightbox-images');
+        const lightboxClose = document.getElementById('lightbox-close');
 
-        function openMobileMenu() {
-            mobileMenu.classList.add('is-open');
-            hamburgerBtn.setAttribute('aria-expanded', 'true');
+        function openLightbox(imagePaths) {
+            lightboxImages.innerHTML = '';
+            imagePaths.forEach(function(src) {
+                var img = document.createElement('img');
+                img.src = src.trim();
+                img.style.cssText = 'width:100%;height:auto;object-fit:contain;border-radius:0.5rem;';
+                lightboxImages.appendChild(img);
+            });
+            lightbox.style.display = 'flex';
             document.body.style.overflow = 'hidden';
         }
-        function closeMobileMenu() {
-            mobileMenu.classList.remove('is-open');
-            hamburgerBtn.setAttribute('aria-expanded', 'false');
+        function closeLightbox() {
+            lightbox.style.display = 'none';
             document.body.style.overflow = '';
         }
 
-        hamburgerBtn.addEventListener('click', openMobileMenu);
-        mobileMenuClose.addEventListener('click', closeMobileMenu);
-        document.querySelectorAll('#mobile-menu .mobile-nav-links a').forEach(function(link) {
-            link.addEventListener('click', closeMobileMenu);
+        lightboxClose.addEventListener('click', closeLightbox);
+        lightbox.addEventListener('click', function(e) {
+            if (e.target === lightbox) closeLightbox();
         });
         document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape' && mobileMenu.classList.contains('is-open')) closeMobileMenu();
+            if (e.key === 'Escape' && lightbox.style.display === 'flex') closeLightbox();
+        });
+
+        document.querySelectorAll('.work-item').forEach(function(item) {
+            item.addEventListener('click', function(e) {
+                e.preventDefault();
+                var images = this.getAttribute('data-images');
+                if (images) openLightbox(images.split('|'));
+            });
         });
 
         contactForm.addEventListener('submit', async function(e) {
