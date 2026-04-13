@@ -472,7 +472,7 @@ gtag('config', 'G-2M6V79H761');
 
         <div class="flex flex-col border-t border-zinc-900">
             <!-- Project Item -->
-            <a href="#" data-images="Work/PDFtoCAD_A4.png|Work/PDF.png" class="work-item group relative flex flex-row items-center justify-between py-8 border-b border-zinc-900 hover:bg-zinc-900/20 transition-colors px-4 -mx-4">
+            <a href="javascript:void(0)" data-images="Work/PDFtoCAD_A4.png|Work/PDF.png" class="work-item group relative flex flex-row items-center justify-between py-8 border-b border-zinc-900 hover:bg-zinc-900/20 transition-colors px-4 -mx-4">
                 <div class="z-10">
                     <h3 class="text-2xl sm:text-4xl md:text-5xl font-extralight tracking-tighter text-zinc-100 group-hover:text-white transition-colors">PDF to CAD</h3>
                 </div>
@@ -493,7 +493,7 @@ gtag('config', 'G-2M6V79H761');
             </a>
             
             <!-- Project Item -->
-            <a href="#" data-images="Work/TechnicalDrawing.png" class="work-item group relative flex flex-row items-center justify-between py-8 border-b border-zinc-900 hover:bg-zinc-900/20 transition-colors px-4 -mx-4">
+            <a href="javascript:void(0)" data-images="Work/TechnicalDrawing.png" class="work-item group relative flex flex-row items-center justify-between py-8 border-b border-zinc-900 hover:bg-zinc-900/20 transition-colors px-4 -mx-4">
                 <div class="z-10">
                     <h3 class="text-2xl sm:text-4xl md:text-5xl font-extralight tracking-tighter text-zinc-100 group-hover:text-white transition-colors">Technical drawing</h3>
                 </div>
@@ -506,7 +506,7 @@ gtag('config', 'G-2M6V79H761');
             </a>
 
             <!-- Project Item -->
-            <a href="#" data-images="Work/SKETCHtoCAD.png|Work/Sketch.png" class="work-item group relative flex flex-row items-center justify-between py-8 border-b border-zinc-900 hover:bg-zinc-900/20 transition-colors px-4 -mx-4">
+            <a href="javascript:void(0)" data-images="Work/SKETCHtoCAD.png|Work/Sketch.png" class="work-item group relative flex flex-row items-center justify-between py-8 border-b border-zinc-900 hover:bg-zinc-900/20 transition-colors px-4 -mx-4">
                 <div class="z-10">
                     <h3 class="text-2xl sm:text-4xl md:text-5xl font-extralight tracking-tighter text-zinc-100 group-hover:text-white transition-colors">Sketch to CAD</h3>
                 </div>
@@ -526,7 +526,7 @@ gtag('config', 'G-2M6V79H761');
             </a>
 
             <!-- Project Item -->
-            <a href="#" data-images="Work/Welded piece.png" class="work-item group relative flex flex-row items-center justify-between py-8 border-b border-zinc-900 hover:bg-zinc-900/20 transition-colors px-4 -mx-4">
+            <a href="javascript:void(0)" data-images="Work/Welded piece.png" class="work-item group relative flex flex-row items-center justify-between py-8 border-b border-zinc-900 hover:bg-zinc-900/20 transition-colors px-4 -mx-4">
                 <div class="z-10">
                     <h3 class="text-2xl sm:text-4xl md:text-5xl font-extralight tracking-tighter text-zinc-100 group-hover:text-white transition-colors">Welded Assembly</h3>
                 </div>
@@ -1015,11 +1015,15 @@ gtag('config', 'G-2M6V79H761');
         });
 
         document.querySelectorAll('.work-item').forEach(function(item) {
-            item.addEventListener('click', function(e) {
+            function handleWorkTap(e) {
                 e.preventDefault();
-                var images = this.getAttribute('data-images');
+                e.stopPropagation();
+                var images = item.getAttribute('data-images');
                 if (images) openLightbox(images.split('|'));
-            });
+                return false;
+            }
+            item.addEventListener('click', handleWorkTap);
+            item.addEventListener('touchend', handleWorkTap, { passive: false });
         });
 
         contactForm.addEventListener('submit', async function(e) {
