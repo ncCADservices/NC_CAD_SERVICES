@@ -312,7 +312,7 @@ gtag('config', 'G-2M6V79H761');
 
         <div class="flex flex-col border-t border-zinc-900">
             <!-- Project Item -->
-            <a href="javascript:void(0)" onclick="window.openWorkLightbox('Work/PDFtoCAD_A4.png|Work/PDF.png')" class="work-item group relative flex flex-row items-center justify-between py-8 border-b border-zinc-900 hover:bg-zinc-900/20 transition-colors px-4 -mx-4">
+            <a href="#" onclick="event.preventDefault();window.openWorkLightbox('Work/PDFtoCAD_A4.png|Work/PDF.png')" class="work-item group relative flex flex-row items-center justify-between py-8 border-b border-zinc-900 hover:bg-zinc-900/20 transition-colors px-4 -mx-4">
                 <div class="z-10">
                     <h3 class="text-2xl sm:text-4xl md:text-5xl font-extralight tracking-tighter text-zinc-100 group-hover:text-white transition-colors">PDF to CAD</h3>
                 </div>
@@ -333,7 +333,7 @@ gtag('config', 'G-2M6V79H761');
             </a>
             
             <!-- Project Item -->
-            <a href="javascript:void(0)" onclick="window.openWorkLightbox('Work/TechnicalDrawing.png')" class="work-item group relative flex flex-row items-center justify-between py-8 border-b border-zinc-900 hover:bg-zinc-900/20 transition-colors px-4 -mx-4">
+            <a href="#" onclick="event.preventDefault();window.openWorkLightbox('Work/TechnicalDrawing.png')" class="work-item group relative flex flex-row items-center justify-between py-8 border-b border-zinc-900 hover:bg-zinc-900/20 transition-colors px-4 -mx-4">
                 <div class="z-10">
                     <h3 class="text-2xl sm:text-4xl md:text-5xl font-extralight tracking-tighter text-zinc-100 group-hover:text-white transition-colors">Technical drawing</h3>
                 </div>
@@ -346,7 +346,7 @@ gtag('config', 'G-2M6V79H761');
             </a>
 
             <!-- Project Item -->
-            <a href="javascript:void(0)" onclick="window.openWorkLightbox('Work/SKETCHtoCAD.png|Work/Sketch.png')" class="work-item group relative flex flex-row items-center justify-between py-8 border-b border-zinc-900 hover:bg-zinc-900/20 transition-colors px-4 -mx-4">
+            <a href="#" onclick="event.preventDefault();window.openWorkLightbox('Work/SKETCHtoCAD.png|Work/Sketch.png')" class="work-item group relative flex flex-row items-center justify-between py-8 border-b border-zinc-900 hover:bg-zinc-900/20 transition-colors px-4 -mx-4">
                 <div class="z-10">
                     <h3 class="text-2xl sm:text-4xl md:text-5xl font-extralight tracking-tighter text-zinc-100 group-hover:text-white transition-colors">Sketch to CAD</h3>
                 </div>
@@ -366,7 +366,7 @@ gtag('config', 'G-2M6V79H761');
             </a>
 
             <!-- Project Item -->
-            <a href="javascript:void(0)" onclick="window.openWorkLightbox('Work/Welded piece.png')" class="work-item group relative flex flex-row items-center justify-between py-8 border-b border-zinc-900 hover:bg-zinc-900/20 transition-colors px-4 -mx-4">
+            <a href="#" onclick="event.preventDefault();window.openWorkLightbox('Work/Welded piece.png')" class="work-item group relative flex flex-row items-center justify-between py-8 border-b border-zinc-900 hover:bg-zinc-900/20 transition-colors px-4 -mx-4">
                 <div class="z-10">
                     <h3 class="text-2xl sm:text-4xl md:text-5xl font-extralight tracking-tighter text-zinc-100 group-hover:text-white transition-colors">Welded Assembly</h3>
                 </div>
@@ -381,9 +381,9 @@ gtag('config', 'G-2M6V79H761');
     </section>
 
     <!-- Work Image Lightbox -->
-    <div id="work-lightbox" onclick="if(event.target===this)window.closeWorkLightbox()" style="display:none; position:fixed; inset:0; z-index:80; background:rgba(0,0,0,0.95); flex-direction:column; align-items:center; justify-content:center; padding:1.5rem;">
-        <button onclick="window.closeWorkLightbox()" style="position:absolute; top:1.25rem; right:1.25rem; background:none; border:none; color:rgba(244,244,245,0.8); font-size:1.75rem; cursor:pointer; line-height:1; padding:0.5rem;">✕</button>
-        <div id="lightbox-images" onclick="event.stopPropagation()" style="display:flex; flex-direction:column; gap:1rem; width:100%; max-width:600px; max-height:80vh; overflow-y:auto;"></div>
+    <div id="work-lightbox" onclick="if(event.target===this)window.closeWorkLightbox()" style="display:none; position:fixed; inset:0; z-index:80; background:rgba(0,0,0,0.97); flex-direction:column; align-items:center; justify-content:center; padding:1rem; -webkit-overflow-scrolling:touch;">
+        <button onclick="window.closeWorkLightbox()" style="position:absolute; top:1rem; right:1rem; background:rgba(255,255,255,0.08); border:none; color:rgba(244,244,245,0.9); font-size:1.5rem; cursor:pointer; line-height:1; padding:0.6rem 0.8rem; border-radius:0.5rem; z-index:1;">✕</button>
+        <div id="lightbox-images" onclick="event.stopPropagation()" style="display:flex; flex-direction:column; gap:1rem; width:100%; max-width:720px; max-height:88vh; overflow-y:auto; overflow-x:hidden; -webkit-overflow-scrolling:touch;"></div>
     </div>
 
     <!-- Pricing Section -->
