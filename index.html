@@ -508,7 +508,7 @@ gtag('config', 'G-2M6V79H761');
     <!-- Footer -->
     <footer class="pt-12 lg:pt-32 pb-8 px-6 md:px-12 w-full flex flex-col items-center overflow-hidden">
         <div class="flex justify-center w-full mb-10 lg:mb-24">
-            <img id="footer-logo" src="Logos/Logo_CAD_SERVICES.png" alt="NC CAD Services" class="h-64 w-auto" loading="lazy" decoding="async">
+            <a href="#" aria-label="Back to top"><img id="footer-logo" src="Logos/Logo_CAD_SERVICES.png" alt="NC CAD Services" class="h-64 w-auto" loading="lazy" decoding="async"></a>
         </div>
 
         <div id="footer-info-row" class="relative w-full text-xs uppercase tracking-widest text-zinc-500 mb-12 lg:mb-20 max-w-[100rem] mx-auto">
@@ -836,6 +836,12 @@ gtag('config', 'G-2M6V79H761');
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape') window.closeWorkLightbox();
         });
+
+        // Scroll to top on page load/refresh
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+        }
+        window.scrollTo(0, 0);
 
         contactForm.addEventListener('submit', async function(e) {
             e.preventDefault();
