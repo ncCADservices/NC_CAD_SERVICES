@@ -14,8 +14,8 @@ document.documentElement.dataset.theme = 'dark';
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link href="https://fonts.googleapis.com/css2?family=Jura:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="Logos/Barco.png">
+<link rel="dns-prefetch" href="https://formspree.io">
 <style>
-/* Custom scrollbar for a cleaner look */
 ::-webkit-scrollbar {
 width: 8px;
 }
@@ -29,7 +29,6 @@ border-radius: 4px;
 ::-webkit-scrollbar-thumb:hover {
 background: #404040;
 }
-/* Utility for hiding input autofill background */
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
@@ -113,75 +112,59 @@ align-items: flex-end;
 gap: 0.6rem;
 }
 
-/* ===================== RESPONSIVE STYLES ===================== */
-
-/* Work section title centered on mobile */
 @media (max-width: 1023px) {
     #section-work {
         text-align: center;
     }
 }
 
-/* ---- Mobile only: up to 767px ---- */
 @media (max-width: 767px) {
-    /* About description heading */
     #about-description {
         font-size: clamp(1.5rem, 6vw, 2.25rem) !important;
         margin-bottom: 2rem !important;
     }
-    /* Section headings (Work, Pricing, Contact) */
     #section-work,
     #section-pricing,
     #section-contact {
         font-size: clamp(2.25rem, 10vw, 3rem) !important;
     }
-    /* Project titles in Work */
     #work .group h3 {
         font-size: clamp(1.5rem, 7vw, 2rem) !important;
     }
-    /* Reduce section vertical padding */
     section {
         padding-top: 1.5rem !important;
         padding-bottom: 1.5rem !important;
     }
-    /* Reduce grid row gap inside sections (the (1),(3) index rows) */
     #about > .grid,
     #work > .grid,
     #pricing > .grid,
     #contact > .grid {
         gap: 0.5rem !important;
     }
-    /* Reduce mb-16 on Work/Pricing/Contact header rows */
     #work > .grid,
     #pricing > .grid,
     #contact > .grid {
         margin-bottom: 0.75rem !important;
     }
-    /* Reduce BARCO CI image container vertical padding */
     #barco-ci-wrapper {
         padding-top: 0.75rem !important;
         padding-bottom: 0.75rem !important;
     }
-    /* Footer logo smaller on mobile */
     #footer-logo {
         height: 6rem !important;
     }
 }
 
-/* ---- Tablet only: 768px – 1023px ---- */
 @media (min-width: 768px) and (max-width: 1023px) {
-    /* About description heading */
     #about-description {
         font-size: clamp(2rem, 4vw, 2.75rem) !important;
         margin-bottom: 3rem !important;
     }
-    /* Section headings */
     #section-work,
     #section-pricing,
     #section-contact {
         font-size: clamp(3rem, 8vw, 5rem) !important;
     }
-    /* Footer logo size */
     #footer-logo {
         height: 10rem !important;
     }
@@ -198,7 +181,6 @@ gtag('config', 'G-2M6V79H761');
 </head>
 <body class="bg-[#050505] text-zinc-300 font-['Jura',sans-serif] antialiased selection:bg-zinc-800 selection:text-zinc-100">
 
-    <!-- Navigation -->
     <nav class="fixed w-full top-0 z-50 mix-blend-difference text-zinc-300 px-6 py-6 md:px-12 flex justify-between items-center text-xs">
         <a href="#" class="h-16 w-[10.5rem] flex items-center">
             <img id="nav-logo" src="Logos/Logo_SenseFons.png" alt="NC CAD Services" class="h-full w-full object-contain object-left">
@@ -227,10 +209,8 @@ gtag('config', 'G-2M6V79H761');
         </div>
     </div>
 
-    <!-- Hero Section -->
     <header class="relative w-full pt-24 lg:pt-40 pb-10 lg:pb-20 flex flex-col items-center">
         <div id="hero-title-container" class="w-full max-w-[100rem] mx-auto px-6 md:px-12 flex flex-col items-center justify-center mb-6 lg:mb-12 gap-8">
-            <!-- Two column layout with logo and text -->
             <div id="hero-title-row" class="flex flex-col lg:flex-row items-center justify-center gap-4 lg:gap-20 text-center lg:text-left">
                 <img id="hero-mark" src="Logos/NC_Blanc.png" alt="NC" class="h-14 sm:h-20 lg:h-40 w-auto flex-shrink-0">
                 <h1 class="text-3xl sm:text-5xl md:text-7xl lg:text-9xl font-extralight tracking-widest text-zinc-100 leading-none">CAD SERVICES</h1>
@@ -258,7 +238,6 @@ gtag('config', 'G-2M6V79H761');
         <img id="hero-image" src="Logos/Barco.png" alt="PDF to CAD workflow" class="block w-full max-w-none h-auto object-contain object-center opacity-100" fetchpriority="high" decoding="async">
     </header>
 
-    <!-- About Section -->
     <section id="about" class="py-24 px-6 md:px-12 max-w-[100rem] mx-auto">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24">
             <div class="lg:col-span-12">
@@ -272,17 +251,14 @@ gtag('config', 'G-2M6V79H761');
                         <span id="skills-label" class="text-xs text-zinc-500">(Skills)</span>
                     </div>
                     <div class="lg:col-span-10 flex flex-col">
-                        <!-- Skill Item -->
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 py-8 border-t border-zinc-900">
                             <h3 id="skill-strategy-title" class="text-xl tracking-tight text-zinc-100 font-light">Strategy</h3>
                             <p id="skill-strategy-desc" class="md:col-span-2 text-sm text-zinc-400 font-light leading-relaxed">Developing comprehensive brand strategies that form the core identity for her clients. Her work involves deep market research and consumer psychology to define a brand's unique vision.</p>
                         </div>
-                        <!-- Skill Item -->
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 py-8 border-t border-zinc-900">
                             <h3 id="skill-webdesign-title" class="text-xl tracking-tight text-zinc-100 font-light">Web Design</h3>
                             <p id="skill-webdesign-desc" class="md:col-span-2 text-sm text-zinc-400 font-light leading-relaxed">Creates visually engaging and intuitive websites that combine aesthetic appeal with flawless user experience. She is proficient in crafting layouts, selecting typography, and managing visual assets to ensure perfection.</p>
                         </div>
-                        <!-- Skill Item -->
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 py-8 border-t border-zinc-900 border-b">
                             <h3 id="skill-branding-title" class="text-xl tracking-tight text-zinc-100 font-light">Branding</h3>
                             <p id="skill-branding-desc" class="md:col-span-2 text-sm text-zinc-400 font-light leading-relaxed">Specializes in the visual representation of a brand, developing cohesive and memorable design systems. Her brand design work, which includes logos, color palettes, and typographic systems.</p>
@@ -293,14 +269,12 @@ gtag('config', 'G-2M6V79H761');
         </div>
     </section>
 
-    <!-- Full Width Image -->
     <div id="barco-ci-wrapper" class="w-full px-4 md:px-8 py-12">
         <div id="barco-ci-container" class="w-full aspect-[16/9] md:aspect-[2/1] rounded-2xl overflow-hidden relative">
             <img src="Work/BARCO CI.png" alt="BARCO CI" class="w-full h-full object-contain opacity-60" loading="lazy" decoding="async">
         </div>
     </div>
 
-    <!-- Work Section -->
     <section id="work" class="py-24 px-6 md:px-12 max-w-[100rem] mx-auto">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 mb-16">
             <div class="lg:col-span-10">
@@ -309,7 +283,6 @@ gtag('config', 'G-2M6V79H761');
         </div>
 
         <div class="flex flex-col border-t border-zinc-900">
-            <!-- Project Item -->
             <a href="#" onclick="event.preventDefault();window.openWorkLightbox('Work/PDFtoCAD_A4.png|Work/PDF.png')" class="work-item group relative flex flex-row items-center justify-between py-8 border-b border-zinc-900 hover:bg-zinc-900/20 transition-colors px-4 -mx-4">
                 <div class="z-10">
                     <h3 class="text-2xl sm:text-4xl md:text-5xl font-extralight tracking-tighter text-zinc-100 group-hover:text-white transition-colors">PDF to CAD</h3>
@@ -317,7 +290,6 @@ gtag('config', 'G-2M6V79H761');
                 <div class="z-10 flex-shrink-0 ml-4">
                     <span class="text-xs text-zinc-500">2026</span>
                 </div>
-                <!-- Hover Image Reveal (Desktop only for neatness) -->
                 <div class="absolute left-[58%] top-1/2 -translate-x-1/2 -translate-y-1/2 w-[860px] rounded-lg overflow-hidden opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 transition-all duration-500 pointer-events-none z-0 hidden lg:block shadow-2xl">
                     <div class="grid grid-cols-2 gap-3 bg-[#050505]/90 p-3">
                         <div class="h-[320px] flex items-center justify-center rounded-lg overflow-hidden">
@@ -330,7 +302,6 @@ gtag('config', 'G-2M6V79H761');
                 </div>
             </a>
             
-            <!-- Project Item -->
             <a href="#" onclick="event.preventDefault();window.openWorkLightbox('Work/TechnicalDrawing.png')" class="work-item group relative flex flex-row items-center justify-between py-8 border-b border-zinc-900 hover:bg-zinc-900/20 transition-colors px-4 -mx-4">
                 <div class="z-10">
                     <h3 class="text-2xl sm:text-4xl md:text-5xl font-extralight tracking-tighter text-zinc-100 group-hover:text-white transition-colors">Technical drawing</h3>
@@ -343,7 +314,6 @@ gtag('config', 'G-2M6V79H761');
                 </div>
             </a>
 
-            <!-- Project Item -->
             <a href="#" onclick="event.preventDefault();window.openWorkLightbox('Work/SKETCHtoCAD.png|Work/Sketch.png')" class="work-item group relative flex flex-row items-center justify-between py-8 border-b border-zinc-900 hover:bg-zinc-900/20 transition-colors px-4 -mx-4">
                 <div class="z-10">
                     <h3 class="text-2xl sm:text-4xl md:text-5xl font-extralight tracking-tighter text-zinc-100 group-hover:text-white transition-colors">Sketch to CAD</h3>
@@ -363,7 +333,6 @@ gtag('config', 'G-2M6V79H761');
                 </div>
             </a>
 
-            <!-- Project Item -->
             <a href="#" onclick="event.preventDefault();window.openWorkLightbox('Work/Welded piece.png')" class="work-item group relative flex flex-row items-center justify-between py-8 border-b border-zinc-900 hover:bg-zinc-900/20 transition-colors px-4 -mx-4">
                 <div class="z-10">
                     <h3 class="text-2xl sm:text-4xl md:text-5xl font-extralight tracking-tighter text-zinc-100 group-hover:text-white transition-colors">Welded Assembly</h3>
@@ -378,13 +347,11 @@ gtag('config', 'G-2M6V79H761');
         </div>
     </section>
 
-    <!-- Work Image Lightbox -->
     <div id="work-lightbox" onclick="if(event.target===this)window.closeWorkLightbox()" style="display:none; opacity:0; transition:opacity 0.18s ease; position:fixed; inset:0; z-index:80; background:rgba(0,0,0,0.97); flex-direction:column; align-items:center; justify-content:center; padding:1rem; -webkit-overflow-scrolling:touch;">
         <button onclick="window.closeWorkLightbox()" style="position:absolute; top:1rem; right:1rem; background:rgba(255,255,255,0.08); border:none; color:rgba(244,244,245,0.9); font-size:1.5rem; cursor:pointer; line-height:1; padding:0.6rem 0.8rem; border-radius:0.5rem; z-index:1;">✕</button>
         <div id="lightbox-images" onclick="event.stopPropagation()" style="display:flex; flex-direction:column; gap:1rem; width:100%; max-width:720px; max-height:88vh; overflow-y:auto; overflow-x:hidden; -webkit-overflow-scrolling:touch;"></div>
     </div>
 
-    <!-- Pricing Section -->
     <section id="pricing" class="py-24 px-6 md:px-12 max-w-[100rem] mx-auto">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 mb-16">
             <div class="lg:col-span-10">
@@ -393,7 +360,6 @@ gtag('config', 'G-2M6V79H761');
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Pricing Box 1 -->
             <div class="h-full border border-zinc-800 rounded-lg p-8 hover:border-zinc-600 transition-colors hover:bg-zinc-900/20 grid grid-rows-[auto_1fr_auto] gap-5">
                 <div>
                     <p id="pricing-pdf-title" class="text-2xl text-zinc-100 font-light tracking-tight">PDF to CAD</p>
@@ -406,7 +372,6 @@ gtag('config', 'G-2M6V79H761');
                 </ul>
                 <p id="pricing-pdf-note" class="text-xs text-zinc-500 font-light leading-relaxed">Final price depends on project complexity. Most projects range between $80 and $200.</p>
             </div>
-            <!-- Pricing Box 2 -->
             <div class="h-full border border-zinc-800 rounded-lg p-8 hover:border-zinc-600 transition-colors hover:bg-zinc-900/20 grid grid-rows-[auto_1fr_auto] gap-5">
                 <div>
                     <p id="pricing-edit-title" class="text-2xl text-zinc-100 font-light tracking-tight">CAD Editing &amp; Redrawing</p>
@@ -419,7 +384,6 @@ gtag('config', 'G-2M6V79H761');
                 </ul>
                 <p id="pricing-edit-note" class="text-xs text-zinc-500 font-light leading-relaxed">Final price depends on project complexity. Most projects range between $110 and $250.</p>
             </div>
-            <!-- Pricing Box 3 -->
             <div class="h-full border border-zinc-800 rounded-lg p-8 hover:border-zinc-600 transition-colors hover:bg-zinc-900/20 grid grid-rows-[auto_1fr_auto] gap-5">
                 <div>
                     <p id="pricing-sketch-title" class="text-2xl text-zinc-100 font-light tracking-tight">Sketch to CAD</p>
@@ -447,7 +411,6 @@ gtag('config', 'G-2M6V79H761');
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section id="contact" class="py-24 px-6 md:px-12 max-w-[100rem] mx-auto">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 mb-16">
             <div class="lg:col-span-10">
@@ -459,7 +422,6 @@ gtag('config', 'G-2M6V79H761');
             <div class="lg:col-span-2"></div>
             <div class="lg:col-span-10 flex flex-col md:flex-row gap-16">
                 
-                <!-- Contact Info -->
                 <div class="w-full md:w-1/3 flex flex-col">
                     <div class="py-6 border-t border-zinc-900 flex justify-between items-start">
                         <h3 id="contact-address-label" class="text-sm tracking-tight text-zinc-100 font-light">Address</h3>
@@ -483,7 +445,6 @@ gtag('config', 'G-2M6V79H761');
                     </div>
                 </div>
 
-                <!-- Form -->
                 <form id="contact-form" class="w-full md:w-2/3 flex flex-col gap-6">
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                         <input id="form-first-name" name="first_name" type="text" placeholder="First Name" required="" class="w-full bg-transparent border-b border-zinc-800 py-4 text-zinc-100 focus:border-zinc-400 focus:outline-none transition-colors rounded-none placeholder-zinc-600 text-sm font-light">
@@ -505,14 +466,12 @@ gtag('config', 'G-2M6V79H761');
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="pt-12 lg:pt-32 pb-8 px-6 md:px-12 w-full flex flex-col items-center overflow-hidden">
         <div class="flex justify-center w-full mb-10 lg:mb-24">
             <a href="#" aria-label="Back to top"><img id="footer-logo" src="Logos/Logo_CAD_SERVICES.png" alt="NC CAD Services" class="h-64 w-auto" loading="lazy" decoding="async"></a>
         </div>
 
         <div id="footer-info-row" class="relative w-full text-xs uppercase tracking-widest text-zinc-500 mb-12 lg:mb-20 max-w-[100rem] mx-auto">
-            <!-- Top row: name left, born right (mobile & tablet); desktop uses flex justify-between -->
             <div class="flex flex-row justify-between items-start lg:items-end gap-4 mb-4 lg:mb-0">
                 <div>
                     <p class="text-zinc-300 mb-1">Artur Nogué Cruells</p>
@@ -522,12 +481,10 @@ gtag('config', 'G-2M6V79H761');
                     <p class="text-zinc-300 mb-1" id="footer-born">Born &amp; Raised</p>
                     <p id="footer-location">Barcelona, ES</p>
                 </div>
-                <!-- Desktop only: All Rights on the right -->
                 <div class="hidden lg:block lg:text-right">
                     <p id="footer-rights">All Rights Reserved</p>
                 </div>
             </div>
-            <!-- Mobile/tablet only: All Rights centered below -->
             <div class="text-center lg:hidden">
                 <p id="footer-rights-mobile">All Rights Reserved</p>
             </div>
@@ -672,10 +629,6 @@ gtag('config', 'G-2M6V79H761');
             {id: 'nav-work', key: 'nav.work'},
             {id: 'nav-pricing', key: 'nav.pricing'},
             {id: 'nav-contact', key: 'nav.contact'},
-            {id: 'nav-about-mobile', key: 'nav.about'},
-            {id: 'nav-work-mobile', key: 'nav.work'},
-            {id: 'nav-pricing-mobile', key: 'nav.pricing'},
-            {id: 'nav-contact-mobile', key: 'nav.contact'},
             {id: 'hero-role', key: 'hero.role'},
             {id: 'hero-born', key: 'hero.born'},
             {id: 'hero-location', key: 'hero.location'},
@@ -716,7 +669,6 @@ gtag('config', 'G-2M6V79H761');
             {id: 'contact-address-label', key: 'contact.address.label'},
             {id: 'contact-address-line1', key: 'contact.address.line1'},
             {id: 'contact-address-line2', key: 'contact.address.line2'},
-            {id: 'contact-address-line3', key: 'contact.address.line3'},
             {id: 'contact-phone-label', key: 'contact.phone.label'},
             {id: 'contact-email-label', key: 'contact.email.label'},
             {id: 'contact-email-value', key: 'contact.email.value'},
@@ -800,16 +752,7 @@ gtag('config', 'G-2M6V79H761');
             }
         };
 
-        // Preload all work images so they're cached when the lightbox opens
-        var _workImages = [
-            'Work/PDFtoCAD_A4.png','Work/PDF.png',
-            'Work/TechnicalDrawing.png',
-            'Work/SKETCHtoCAD.png','Work/Sketch.png',
-            'Work/Welded piece.png'
-        ];
-        _workImages.forEach(function(src) {
-            var i = new Image(); i.src = src;
-        });
+        (function(){var imgs=['Work/PDFtoCAD_A4.png','Work/PDF.png','Work/TechnicalDrawing.png','Work/SKETCHtoCAD.png','Work/Sketch.png','Work/Welded piece.png'];imgs.forEach(function(s){new Image().src=s;});})();
 
         // Work image lightbox – global functions for inline onclick
         window.openWorkLightbox = function(imagesStr) {
@@ -872,8 +815,7 @@ gtag('config', 'G-2M6V79H761');
                 formFeedback.className = 'text-sm font-light py-3 px-4 rounded-sm border text-red-400 border-red-400/30 bg-red-400/5';
             } finally {
                 formSubmitBtn.disabled = false;
-                const lang = document.documentElement.lang;
-                formSubmitBtn.textContent = lang === 'es' ? 'Enviar' : 'Submit';
+                formSubmitBtn.textContent = translations[document.documentElement.lang]['form.submit'] || 'Submit';
             }
         });
     </script>
